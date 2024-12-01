@@ -18,5 +18,10 @@ class Kendaraan extends Model
     }
   }
 
+  public function perusahaan()
+  {
+      return $this->belongsTo(Perusahaan::class, 'perusahaan_id');
+  }
+
 
 }

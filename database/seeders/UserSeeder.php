@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
         $data = [
             [
                 'name' => 'Superadmin',
-                'email' => 'superadmin@app.com',
+                'email' => 'https://github.com/vandewa/trayek.git',
                 'password' => bcrypt('password'),
             ]
         ];

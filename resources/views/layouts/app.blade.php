@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en" data-bs-theme="light1">
 
 <head>
     <meta charset="utf-8">
@@ -45,7 +45,7 @@
                     <span class="material-symbols-outlined">search</span>Search
                 </button>
             </div>
-            <ul class="navbar-nav top-right-menu gap-2">
+            <ul class="gap-2 navbar-nav top-right-menu">
                 <li class="nav-item d-lg-none d-block" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <a class="nav-link" href="javascript:;"><span class="material-symbols-outlined">
                             search
@@ -60,238 +60,238 @@
                         href="javascript:;"><span class="material-symbols-outlined">
                             apps
                         </span></a>
-                    <div class="dropdown-menu dropdown-menu-end mt-lg-2 p-0">
-                        <div class="app-container p-2 my-2">
-                            <div class="row gx-0 gy-2 row-cols-3 justify-content-center p-2">
+                    <div class="p-0 dropdown-menu dropdown-menu-end mt-lg-2">
+                        <div class="p-2 my-2 app-container">
+                            <div class="p-2 row gx-0 gy-2 row-cols-3 justify-content-center">
                                 <div class="col">
                                     <a href="javascript:;">
-                                        <div class="app-box text-center">
+                                        <div class="text-center app-box">
                                             <div class="app-icon">
                                                 <img src="assets/images/icons/slack.png" width="30" alt="">
                                             </div>
                                             <div class="app-name">
-                                                <p class="mb-0 mt-1">Slack</p>
+                                                <p class="mt-1 mb-0">Slack</p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a href="javascript:;">
-                                        <div class="app-box text-center">
+                                        <div class="text-center app-box">
                                             <div class="app-icon">
                                                 <img src="assets/images/icons/behance.png" width="30"
                                                     alt="">
                                             </div>
                                             <div class="app-name">
-                                                <p class="mb-0 mt-1">Behance</p>
+                                                <p class="mt-1 mb-0">Behance</p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a href="javascript:;">
-                                        <div class="app-box text-center">
+                                        <div class="text-center app-box">
                                             <div class="app-icon">
                                                 <img src="assets/images/icons/google-drive.png" width="30"
                                                     alt="">
                                             </div>
                                             <div class="app-name">
-                                                <p class="mb-0 mt-1">Dribble</p>
+                                                <p class="mt-1 mb-0">Dribble</p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a href="javascript:;">
-                                        <div class="app-box text-center">
+                                        <div class="text-center app-box">
                                             <div class="app-icon">
                                                 <img src="assets/images/icons/outlook.png" width="30"
                                                     alt="">
                                             </div>
                                             <div class="app-name">
-                                                <p class="mb-0 mt-1">Outlook</p>
+                                                <p class="mt-1 mb-0">Outlook</p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a href="javascript:;">
-                                        <div class="app-box text-center">
+                                        <div class="text-center app-box">
                                             <div class="app-icon">
                                                 <img src="assets/images/icons/github.png" width="30"
                                                     alt="">
                                             </div>
                                             <div class="app-name">
-                                                <p class="mb-0 mt-1">GitHub</p>
+                                                <p class="mt-1 mb-0">GitHub</p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a href="javascript:;">
-                                        <div class="app-box text-center">
+                                        <div class="text-center app-box">
                                             <div class="app-icon">
                                                 <img src="assets/images/icons/stack-overflow.png" width="30"
                                                     alt="">
                                             </div>
                                             <div class="app-name">
-                                                <p class="mb-0 mt-1">Stack</p>
+                                                <p class="mt-1 mb-0">Stack</p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a href="javascript:;">
-                                        <div class="app-box text-center">
+                                        <div class="text-center app-box">
                                             <div class="app-icon">
                                                 <img src="assets/images/icons/figma.png" width="30"
                                                     alt="">
                                             </div>
                                             <div class="app-name">
-                                                <p class="mb-0 mt-1">Stack</p>
+                                                <p class="mt-1 mb-0">Stack</p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a href="javascript:;">
-                                        <div class="app-box text-center">
+                                        <div class="text-center app-box">
                                             <div class="app-icon">
                                                 <img src="assets/images/icons/twitter.png" width="30"
                                                     alt="">
                                             </div>
                                             <div class="app-name">
-                                                <p class="mb-0 mt-1">Twitter</p>
+                                                <p class="mt-1 mb-0">Twitter</p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a href="javascript:;">
-                                        <div class="app-box text-center">
+                                        <div class="text-center app-box">
                                             <div class="app-icon">
                                                 <img src="assets/images/icons/google-calendar.png" width="30"
                                                     alt="">
                                             </div>
                                             <div class="app-name">
-                                                <p class="mb-0 mt-1">Calendar</p>
+                                                <p class="mt-1 mb-0">Calendar</p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a href="javascript:;">
-                                        <div class="app-box text-center">
+                                        <div class="text-center app-box">
                                             <div class="app-icon">
                                                 <img src="assets/images/icons/spotify.png" width="30"
                                                     alt="">
                                             </div>
                                             <div class="app-name">
-                                                <p class="mb-0 mt-1">Spotify</p>
+                                                <p class="mt-1 mb-0">Spotify</p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a href="javascript:;">
-                                        <div class="app-box text-center">
+                                        <div class="text-center app-box">
                                             <div class="app-icon">
                                                 <img src="assets/images/icons/google-photos.png" width="30"
                                                     alt="">
                                             </div>
                                             <div class="app-name">
-                                                <p class="mb-0 mt-1">Photos</p>
+                                                <p class="mt-1 mb-0">Photos</p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a href="javascript:;">
-                                        <div class="app-box text-center">
+                                        <div class="text-center app-box">
                                             <div class="app-icon">
                                                 <img src="assets/images/icons/pinterest.png" width="30"
                                                     alt="">
                                             </div>
                                             <div class="app-name">
-                                                <p class="mb-0 mt-1">Photos</p>
+                                                <p class="mt-1 mb-0">Photos</p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a href="javascript:;">
-                                        <div class="app-box text-center">
+                                        <div class="text-center app-box">
                                             <div class="app-icon">
                                                 <img src="assets/images/icons/linkedin.png" width="30"
                                                     alt="">
                                             </div>
                                             <div class="app-name">
-                                                <p class="mb-0 mt-1">linkedin</p>
+                                                <p class="mt-1 mb-0">linkedin</p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a href="javascript:;">
-                                        <div class="app-box text-center">
+                                        <div class="text-center app-box">
                                             <div class="app-icon">
                                                 <img src="assets/images/icons/dribble.png" width="30"
                                                     alt="">
                                             </div>
                                             <div class="app-name">
-                                                <p class="mb-0 mt-1">Dribble</p>
+                                                <p class="mt-1 mb-0">Dribble</p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a href="javascript:;">
-                                        <div class="app-box text-center">
+                                        <div class="text-center app-box">
                                             <div class="app-icon">
                                                 <img src="assets/images/icons/youtube.png" width="30"
                                                     alt="">
                                             </div>
                                             <div class="app-name">
-                                                <p class="mb-0 mt-1">YouTube</p>
+                                                <p class="mt-1 mb-0">YouTube</p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a href="javascript:;">
-                                        <div class="app-box text-center">
+                                        <div class="text-center app-box">
                                             <div class="app-icon">
                                                 <img src="assets/images/icons/google.png" width="30"
                                                     alt="">
                                             </div>
                                             <div class="app-name">
-                                                <p class="mb-0 mt-1">News</p>
+                                                <p class="mt-1 mb-0">News</p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a href="javascript:;">
-                                        <div class="app-box text-center">
+                                        <div class="text-center app-box">
                                             <div class="app-icon">
                                                 <img src="assets/images/icons/envato.png" width="30"
                                                     alt="">
                                             </div>
                                             <div class="app-name">
-                                                <p class="mb-0 mt-1">Envato</p>
+                                                <p class="mt-1 mb-0">Envato</p>
                                             </div>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col">
                                     <a href="javascript:;">
-                                        <div class="app-box text-center">
+                                        <div class="text-center app-box">
                                             <div class="app-icon">
                                                 <img src="assets/images/icons/safari.png" width="30"
                                                     alt="">
                                             </div>
                                             <div class="app-name">
-                                                <p class="mb-0 mt-1">Safari</p>
+                                                <p class="mt-1 mb-0">Safari</p>
                                             </div>
                                         </div>
                                     </a>
@@ -322,7 +322,7 @@
                         <div class="header-notifications-list">
                             <a class="dropdown-item" href="javascript:;">
                                 <div class="d-flex align-items-center">
-                                    <div class="notify text-primary border">
+                                    <div class="border notify text-primary">
                                         <span class="material-symbols-outlined">
                                             add_shopping_cart
                                         </span>
@@ -336,7 +336,7 @@
                             </a>
                             <a class="dropdown-item" href="javascript:;">
                                 <div class="d-flex align-items-center">
-                                    <div class="notify text-danger border">
+                                    <div class="border notify text-danger">
                                         <span class="material-symbols-outlined">
                                             account_circle
                                         </span>
@@ -350,7 +350,7 @@
                             </a>
                             <a class="dropdown-item" href="javascript:;">
                                 <div class="d-flex align-items-center">
-                                    <div class="notify text-success border">
+                                    <div class="border notify text-success">
                                         <span class="material-symbols-outlined">
                                             picture_as_pdf
                                         </span>
@@ -364,7 +364,7 @@
                             </a>
                             <a class="dropdown-item" href="javascript:;">
                                 <div class="d-flex align-items-center">
-                                    <div class="notify text-info border">
+                                    <div class="border notify text-info">
                                         <span class="material-symbols-outlined">
                                             store
                                         </span>
@@ -378,7 +378,7 @@
                             </a>
                             <a class="dropdown-item" href="javascript:;">
                                 <div class="d-flex align-items-center">
-                                    <div class="notify text-warning border">
+                                    <div class="border notify text-warning">
                                         <span class="material-symbols-outlined">
                                             event_available
                                         </span>
@@ -392,7 +392,7 @@
                             </a>
                             <a class="dropdown-item" href="javascript:;">
                                 <div class="d-flex align-items-center">
-                                    <div class="notify text-danger border">
+                                    <div class="border notify text-danger">
                                         <span class="material-symbols-outlined">
                                             forum
                                         </span>
@@ -406,7 +406,7 @@
                             </a>
                             <a class="dropdown-item" href="javascript:;">
                                 <div class="d-flex align-items-center">
-                                    <div class="notify text-primary border">
+                                    <div class="border notify text-primary">
                                         <span class="material-symbols-outlined">
                                             local_florist
                                         </span>
@@ -420,7 +420,7 @@
                             </a>
                             <a class="dropdown-item" href="javascript:;">
                                 <div class="d-flex align-items-center">
-                                    <div class="notify text-success border">
+                                    <div class="border notify text-success">
                                         <span class="material-symbols-outlined">
                                             park
                                         </span>
@@ -435,7 +435,7 @@
                             </a>
                             <a class="dropdown-item" href="javascript:;">
                                 <div class="d-flex align-items-center">
-                                    <div class="notify text-warning border">
+                                    <div class="border notify text-warning">
                                         <span class="material-symbols-outlined">
                                             elevation
                                         </span>
@@ -498,9 +498,9 @@
     <div class="modal" id="exampleModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
-                <div class="modal-header gap-2">
+                <div class="gap-2 modal-header">
                     <div class="position-relative popup-search w-100">
-                        <input class="form-control form-control-lg ps-5 border border-3 border-primary" type="search"
+                        <input class="border form-control form-control-lg ps-5 border-3 border-primary" type="search"
                             placeholder="Search">
                         <span
                             class="material-symbols-outlined position-absolute ms-3 translate-middle-y start-0 top-50">search</span>
@@ -513,61 +513,61 @@
                         <p class="mb-1">Html Templates</p>
                         <div class="list-group">
                             <a href="javascript:;"
-                                class="list-group-item list-group-item-action active align-items-center d-flex gap-2"><i
+                                class="gap-2 list-group-item list-group-item-action active align-items-center d-flex"><i
                                     class="bi bi-filetype-html fs-5"></i>Best Html Templates</a>
                             <a href="javascript:;"
-                                class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i
+                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
                                     class="bi bi-award fs-5"></i>Html5 Templates</a>
                             <a href="javascript:;"
-                                class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i
+                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
                                     class="bi bi-box2-heart fs-5"></i>Responsive Html5 Templates</a>
                             <a href="javascript:;"
-                                class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i
+                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
                                     class="bi bi-camera-video fs-5"></i>eCommerce Html Templates</a>
                         </div>
-                        <p class="mb-1 mt-3">Web Designe Company</p>
+                        <p class="mt-3 mb-1">Web Designe Company</p>
                         <div class="list-group">
                             <a href="javascript:;"
-                                class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i
+                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
                                     class="bi bi-chat-right-text fs-5"></i>Best Html Templates</a>
                             <a href="javascript:;"
-                                class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i
+                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
                                     class="bi bi-cloud-arrow-down fs-5"></i>Html5 Templates</a>
                             <a href="javascript:;"
-                                class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i
+                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
                                     class="bi bi-columns-gap fs-5"></i>Responsive Html5 Templates</a>
                             <a href="javascript:;"
-                                class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i
+                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
                                     class="bi bi-collection-play fs-5"></i>eCommerce Html Templates</a>
                         </div>
-                        <p class="mb-1 mt-3">Software Development</p>
+                        <p class="mt-3 mb-1">Software Development</p>
                         <div class="list-group">
                             <a href="javascript:;"
-                                class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i
+                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
                                     class="bi bi-cup-hot fs-5"></i>Best Html Templates</a>
                             <a href="javascript:;"
-                                class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i
+                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
                                     class="bi bi-droplet fs-5"></i>Html5 Templates</a>
                             <a href="javascript:;"
-                                class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i
+                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
                                     class="bi bi-exclamation-triangle fs-5"></i>Responsive Html5 Templates</a>
                             <a href="javascript:;"
-                                class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i
+                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
                                     class="bi bi-eye fs-5"></i>eCommerce Html Templates</a>
                         </div>
-                        <p class="mb-1 mt-3">Online Shoping Portals</p>
+                        <p class="mt-3 mb-1">Online Shoping Portals</p>
                         <div class="list-group">
                             <a href="javascript:;"
-                                class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i
+                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
                                     class="bi bi-facebook fs-5"></i>Best Html Templates</a>
                             <a href="javascript:;"
-                                class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i
+                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
                                     class="bi bi-flower2 fs-5"></i>Html5 Templates</a>
                             <a href="javascript:;"
-                                class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i
+                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
                                     class="bi bi-geo-alt fs-5"></i>Responsive Html5 Templates</a>
                             <a href="javascript:;"
-                                class="list-group-item list-group-item-action align-items-center d-flex gap-2"><i
+                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
                                     class="bi bi-github fs-5"></i>eCommerce Html Templates</a>
                         </div>
                     </div>

@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelperController;
 use App\Http\Controllers\DashboardController;
+use App\Livewire\DetailSk;
+use App\Livewire\ExportSkWord;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +53,9 @@ Route::middleware([
     Route::get('sk-pengawasan', SkPengawasan::class)->name('sk-pengawasan');
     Route::get('sk-kendaraan', SkKendaraan::class)->name('sk-kendaraan');
     Route::get('sk', Sk::class)->name('sk');
+    Route::get('detail-sk/{id}', DetailSk::class)->name('detail-sk');
+    Route::get('/export-sk-word', ExportSkWord::class)->name('export.sk.word');
+
 
     Route::group(['prefix' => 'master', 'as' => 'master.'], function () {
         Route::get('user-index', UserIndex::class)->name('user-index');
