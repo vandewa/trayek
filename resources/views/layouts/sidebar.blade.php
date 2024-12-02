@@ -38,6 +38,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ route('master.kepala') }}"><span class="material-symbols-outlined">arrow_right</span>
+                        Kepala Dinas
+                    </a>
+                </li>
+                <li>
                     <a href="{{ route('master.user-index') }}"><span
                             class="material-symbols-outlined">arrow_right</span>
                         User
