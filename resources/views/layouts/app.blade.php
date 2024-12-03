@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-bs-theme="light1">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <meta charset="utf-8">
@@ -39,428 +39,38 @@
             <div class="btn-toggle-menu">
                 <span class="material-symbols-outlined">menu</span>
             </div>
-            <div class="d-lg-block d-none search-bar">
-                <button class="btn btn-sm w-100 d-flex align-items-center" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">
-                    <span class="material-symbols-outlined">search</span>Search
-                </button>
-            </div>
-            <ul class="gap-2 navbar-nav top-right-menu">
-                <li class="nav-item d-lg-none d-block" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <a class="nav-link" href="javascript:;"><span class="material-symbols-outlined">
-                            search
-                        </span></a>
-                </li>
-                <li class="nav-item dark-mode">
-                    <a class="nav-link dark-mode-icon" href="javascript:;"><span
-                            class="material-symbols-outlined">dark_mode</span></a>
-                </li>
-                <li class="nav-item dropdown dropdown-app">
-                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-bs-toggle="dropdown"
-                        href="javascript:;"><span class="material-symbols-outlined">
-                            apps
-                        </span></a>
-                    <div class="p-0 dropdown-menu dropdown-menu-end mt-lg-2">
-                        <div class="p-2 my-2 app-container">
-                            <div class="p-2 row gx-0 gy-2 row-cols-3 justify-content-center">
-                                <div class="col">
-                                    <a href="javascript:;">
-                                        <div class="text-center app-box">
-                                            <div class="app-icon">
-                                                <img src="assets/images/icons/slack.png" width="30" alt="">
-                                            </div>
-                                            <div class="app-name">
-                                                <p class="mt-1 mb-0">Slack</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="javascript:;">
-                                        <div class="text-center app-box">
-                                            <div class="app-icon">
-                                                <img src="assets/images/icons/behance.png" width="30"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-name">
-                                                <p class="mt-1 mb-0">Behance</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="javascript:;">
-                                        <div class="text-center app-box">
-                                            <div class="app-icon">
-                                                <img src="assets/images/icons/google-drive.png" width="30"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-name">
-                                                <p class="mt-1 mb-0">Dribble</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="javascript:;">
-                                        <div class="text-center app-box">
-                                            <div class="app-icon">
-                                                <img src="assets/images/icons/outlook.png" width="30"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-name">
-                                                <p class="mt-1 mb-0">Outlook</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="javascript:;">
-                                        <div class="text-center app-box">
-                                            <div class="app-icon">
-                                                <img src="assets/images/icons/github.png" width="30"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-name">
-                                                <p class="mt-1 mb-0">GitHub</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="javascript:;">
-                                        <div class="text-center app-box">
-                                            <div class="app-icon">
-                                                <img src="assets/images/icons/stack-overflow.png" width="30"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-name">
-                                                <p class="mt-1 mb-0">Stack</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="javascript:;">
-                                        <div class="text-center app-box">
-                                            <div class="app-icon">
-                                                <img src="assets/images/icons/figma.png" width="30"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-name">
-                                                <p class="mt-1 mb-0">Stack</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="javascript:;">
-                                        <div class="text-center app-box">
-                                            <div class="app-icon">
-                                                <img src="assets/images/icons/twitter.png" width="30"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-name">
-                                                <p class="mt-1 mb-0">Twitter</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="javascript:;">
-                                        <div class="text-center app-box">
-                                            <div class="app-icon">
-                                                <img src="assets/images/icons/google-calendar.png" width="30"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-name">
-                                                <p class="mt-1 mb-0">Calendar</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="javascript:;">
-                                        <div class="text-center app-box">
-                                            <div class="app-icon">
-                                                <img src="assets/images/icons/spotify.png" width="30"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-name">
-                                                <p class="mt-1 mb-0">Spotify</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="javascript:;">
-                                        <div class="text-center app-box">
-                                            <div class="app-icon">
-                                                <img src="assets/images/icons/google-photos.png" width="30"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-name">
-                                                <p class="mt-1 mb-0">Photos</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="javascript:;">
-                                        <div class="text-center app-box">
-                                            <div class="app-icon">
-                                                <img src="assets/images/icons/pinterest.png" width="30"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-name">
-                                                <p class="mt-1 mb-0">Photos</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="javascript:;">
-                                        <div class="text-center app-box">
-                                            <div class="app-icon">
-                                                <img src="assets/images/icons/linkedin.png" width="30"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-name">
-                                                <p class="mt-1 mb-0">linkedin</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="javascript:;">
-                                        <div class="text-center app-box">
-                                            <div class="app-icon">
-                                                <img src="assets/images/icons/dribble.png" width="30"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-name">
-                                                <p class="mt-1 mb-0">Dribble</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="javascript:;">
-                                        <div class="text-center app-box">
-                                            <div class="app-icon">
-                                                <img src="assets/images/icons/youtube.png" width="30"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-name">
-                                                <p class="mt-1 mb-0">YouTube</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="javascript:;">
-                                        <div class="text-center app-box">
-                                            <div class="app-icon">
-                                                <img src="assets/images/icons/google.png" width="30"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-name">
-                                                <p class="mt-1 mb-0">News</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="javascript:;">
-                                        <div class="text-center app-box">
-                                            <div class="app-icon">
-                                                <img src="assets/images/icons/envato.png" width="30"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-name">
-                                                <p class="mt-1 mb-0">Envato</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <a href="javascript:;">
-                                        <div class="text-center app-box">
-                                            <div class="app-icon">
-                                                <img src="assets/images/icons/safari.png" width="30"
-                                                    alt="">
-                                            </div>
-                                            <div class="app-name">
-                                                <p class="mt-1 mb-0">Safari</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-
-                            </div><!--end row-->
-
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item dropdown dropdown-large">
-                    <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;"
-                        data-bs-toggle="dropdown">
-                        <div class="position-relative">
-                            <span class="notify-badge">8</span>
-                            <span class="material-symbols-outlined">
-                                notifications_none
-                            </span>
-                        </div>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end mt-lg-2">
-                        <a href="javascript:;">
-                            <div class="msg-header">
-                                <p class="msg-header-title">Notifications</p>
-                                <p class="msg-header-clear ms-auto">Marks all as read</p>
+            <ul class="navbar-nav top-right-menu gap-2">
+                <ul class="gap-2 navbar-nav top-right-menu">
+                    <li class="nav-item d-lg-none d-block" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <a class="nav-link" href="javascript:;"><span class="material-symbols-outlined">
+                                search
+                            </span></a>
+                    </li>
+                    <li class="nav-item dark-mode">
+                        <a class="nav-link dark-mode-icon" href="javascript:;"><span
+                                class="material-symbols-outlined">dark_mode</span></a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-app">
+                        <div class="dropdown-menu dropdown-menu-end mt-lg-2 p-0">
+                            <div class="app-container p-2 my-2">
+                                <div class="row gx-0 gy-2 row-cols-3 justify-content-center p-2">
+                                </div><!--end row-->
                             </div>
-                        </a>
-                        <div class="header-notifications-list">
-                            <a class="dropdown-item" href="javascript:;">
-                                <div class="d-flex align-items-center">
-                                    <div class="border notify text-primary">
-                                        <span class="material-symbols-outlined">
-                                            add_shopping_cart
-                                        </span>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h6 class="msg-name">New Orders <span class="msg-time float-end">2 min
-                                                ago</span></h6>
-                                        <p class="msg-info">You have recived new orders</p>
-                                    </div>
-                                </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown dropdown-large">
+                        <div class="dropdown-menu dropdown-menu-end mt-lg-2">
+                            <a href="javascript:;">
                             </a>
-                            <a class="dropdown-item" href="javascript:;">
-                                <div class="d-flex align-items-center">
-                                    <div class="border notify text-danger">
-                                        <span class="material-symbols-outlined">
-                                            account_circle
-                                        </span>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h6 class="msg-name">New Customers<span class="msg-time float-end">14 Sec
-                                                ago</span></h6>
-                                        <p class="msg-info">5 new user registered</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="dropdown-item" href="javascript:;">
-                                <div class="d-flex align-items-center">
-                                    <div class="border notify text-success">
-                                        <span class="material-symbols-outlined">
-                                            picture_as_pdf
-                                        </span>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h6 class="msg-name">24 PDF File<span class="msg-time float-end">19 min
-                                                ago</span></h6>
-                                        <p class="msg-info">The pdf files generated</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="dropdown-item" href="javascript:;">
-                                <div class="d-flex align-items-center">
-                                    <div class="border notify text-info">
-                                        <span class="material-symbols-outlined">
-                                            store
-                                        </span>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h6 class="msg-name">New Product Approved <span class="msg-time float-end">2
-                                                hrs ago</span></h6>
-                                        <p class="msg-info">Your new product has approved</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="dropdown-item" href="javascript:;">
-                                <div class="d-flex align-items-center">
-                                    <div class="border notify text-warning">
-                                        <span class="material-symbols-outlined">
-                                            event_available
-                                        </span>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h6 class="msg-name">Time Response <span class="msg-time float-end">28 min
-                                                ago</span></h6>
-                                        <p class="msg-info">5.1 min avarage time response</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="dropdown-item" href="javascript:;">
-                                <div class="d-flex align-items-center">
-                                    <div class="border notify text-danger">
-                                        <span class="material-symbols-outlined">
-                                            forum
-                                        </span>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h6 class="msg-name">New Comments <span class="msg-time float-end">4 hrs
-                                                ago</span></h6>
-                                        <p class="msg-info">New customer comments recived</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="dropdown-item" href="javascript:;">
-                                <div class="d-flex align-items-center">
-                                    <div class="border notify text-primary">
-                                        <span class="material-symbols-outlined">
-                                            local_florist
-                                        </span>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h6 class="msg-name">New 24 authors<span class="msg-time float-end">1 day
-                                                ago</span></h6>
-                                        <p class="msg-info">24 new authors joined last week</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="dropdown-item" href="javascript:;">
-                                <div class="d-flex align-items-center">
-                                    <div class="border notify text-success">
-                                        <span class="material-symbols-outlined">
-                                            park
-                                        </span>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h6 class="msg-name">Your item is shipped <span class="msg-time float-end">5
-                                                hrs
-                                                ago</span></h6>
-                                        <p class="msg-info">Successfully shipped your item</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <a class="dropdown-item" href="javascript:;">
-                                <div class="d-flex align-items-center">
-                                    <div class="border notify text-warning">
-                                        <span class="material-symbols-outlined">
-                                            elevation
-                                        </span>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <h6 class="msg-name">Defense Alerts <span class="msg-time float-end">2 weeks
-                                                ago</span></h6>
-                                        <p class="msg-info">45% less alerts last 4 weeks</p>
-                                    </div>
-                                </div>
+                            <div class="header-notifications-list">
+                                <a class="dropdown-item" href="javascript:;">
+                                </a>
+                            </div>
+                            <a href="javascript:;">
                             </a>
                         </div>
-                        <a href="javascript:;">
-                            <div class="text-center msg-footer">View All</div>
-                        </a>
-                    </div>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="offcanvas" href="#ThemeCustomizer"><span
-                            class="material-symbols-outlined">
-                            settings
-                        </span></a>
-                </li>
-            </ul>
+                    </li>
+                </ul>
         </nav>
     </header>
     <!--end header-->
@@ -480,6 +90,32 @@
         </div>
 
         @include('layouts.sidebar') <!-- Create a partial for the sidebar -->
+
+        <div class="sidebar-bottom dropdown dropup-center dropup">
+            <div class="dropdown-toggle d-flex align-items-center px-3 gap-3 w-100 h-100" data-bs-toggle="dropdown">
+                <div class="user-img">
+                    <img src="{{ asset('dishub.png') }}" alt="">
+                </div>
+                <div class="user-info">
+                    <h5 class="mb-0 user-name">{{ auth()->user()->name ?? ' ' }}</h5>
+                    {{-- <p class="mb-0 user-designation">UI Engineer</p> --}}
+                </div>
+            </div>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <span class="material-symbols-outlined me-2">
+                            logout
+                        </span><span>Logout</span>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
     </aside>
     <!--end sidebar-->
 

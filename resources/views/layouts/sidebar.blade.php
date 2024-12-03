@@ -9,14 +9,14 @@
 
         <li>
             <a href="{{ route('sk') }}">
-                <div class="parent-icon"><span class="material-symbols-outlined">home</span></div>
+                <div class="parent-icon"><span class="material-symbols-outlined">book</span></div>
                 <div class="menu-title">SK</div>
             </a>
         </li>
 
         <li>
             <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><span class="material-symbols-outlined">shopping_cart</span>
+                <div class="parent-icon"><span class="material-symbols-outlined">database</span>
                 </div>
                 <div class="menu-title">Master</div>
             </a>
@@ -35,6 +35,11 @@
                 <li>
                     <a href="{{ route('master.trayek') }}"><span class="material-symbols-outlined">arrow_right</span>
                         Trayek
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('master.kepala') }}"><span class="material-symbols-outlined">arrow_right</span>
+                        Kepala Dinas
                     </a>
                 </li>
                 <li>

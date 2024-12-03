@@ -18,6 +18,7 @@ use App\Http\Controllers\HelperController;
 use App\Http\Controllers\DashboardController;
 use App\Livewire\DetailSk;
 use App\Livewire\ExportSkWord;
+use App\Livewire\KepalaDinas;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +68,7 @@ Route::middleware([
         Route::get('kendaraan', Kendaraan::class)->name('kendaraan');
         Route::get('perusahaan', Perusahaan::class)->name('perusahaan');
         Route::get('trayek', Trayek::class)->name('trayek');
+        Route::get('kepala', KepalaDinas::class)->name('kepala');
     });
 
 });
