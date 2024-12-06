@@ -18,6 +18,7 @@ use App\Http\Controllers\HelperController;
 use App\Http\Controllers\DashboardController;
 use App\Livewire\DetailSk;
 use App\Livewire\ExportSkWord;
+use App\Livewire\Kendaraan\DetailKendaraan;
 use App\Livewire\KepalaDinas;
 
 /*
@@ -56,6 +57,7 @@ Route::middleware([
     Route::get('sk', Sk::class)->name('sk');
     Route::get('detail-sk/{id}', DetailSk::class)->name('detail-sk');
     Route::get('/export-sk-word', ExportSkWord::class)->name('export.sk.word');
+    Route::get('/detail-kendaraan/{id}', DetailKendaraan::class)->name('detail-kendaraan');
 
 
     Route::group(['prefix' => 'master', 'as' => 'master.'], function () {
