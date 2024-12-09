@@ -29,9 +29,6 @@ class Sk extends Model
         return $this->belongsTo(Trayek::class, 'trayek_id');
     }
 
-    public function skKendaraan()  {
-        return $this->hasMany(SkKendaraan::class, 'sk_id');
-    }
 
     public function kendaraans()
     {

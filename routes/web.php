@@ -58,6 +58,7 @@ Route::middleware([
     Route::get('detail-sk/{id}', DetailSk::class)->name('detail-sk');
     Route::get('/export-sk-word', ExportSkWord::class)->name('export.sk.word');
     Route::get('/detail-kendaraan/{id}', DetailKendaraan::class)->name('detail-kendaraan');
+    Route::get('kendaraan-perusahaan', Kendaraan::class)->name('kendaraan');
 
 
     Route::group(['prefix' => 'master', 'as' => 'master.'], function () {

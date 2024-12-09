@@ -7,40 +7,54 @@
                     <li class="list-group-item">
                         <b>No Kendaraan</b>
                         <br>
-                        123 Street Name, City, Australia
+                        {{ $mobil->no_kendaraan }}
                     </li>
                     <li class="list-group-item">
                         <b>Perusahaan</b>
                         <br>
-                        mail@example.com
+                        {{ $mobil->perusahaan->nama }}
                     </li>
                     <li class="list-group-item">
                         <b>Pemilik</b>
                         <br>
-                        Toll Free (123) 472-796
-                        <br>
-                        Mobile : +91-9910XXXX
+                        {{ $mobil->pemilik ?? '- ' }}
+
                     </li>
                     <li class="list-group-item">
                         <b>Daya Angkut</b>
                         <br>
-                        Toll Free (123) 472-796
-                        <br>
-                        Mobile : +91-9910XXXX
+                        {{ $mobil->daya_angkut ?? '-' }}
+
                     </li>
                     <li class="list-group-item">
                         <b>Merek</b>
                         <br>
-                        Toll Free (123) 472-796
+                        {{ $mobil->merek ?? '-' }}
+
+                    </li>
+                    <li class="list-group-item">
+                        <b>Tahun Pembuatan</b>
                         <br>
-                        Mobile : +91-9910XXXX
+                        {{ $mobil->tahun_pembuatan ?? '-' }}
+
                     </li>
                     <li class="list-group-item">
                         <b>Kelas Pelayanan</b>
                         <br>
-                        Toll Free (123) 472-796
+                        {{ $mobil->kelas_pelayanan ?? '-' }}
+
+                    </li>
+                    <li class="list-group-item">
+                        <b>Sifat Perjalanan</b>
                         <br>
-                        Mobile : +91-9910XXXX
+                        {{ $mobil->sifat_perjalanan ?? '-' }}
+
+                    </li>
+                    <li class="list-group-item">
+                        <b>Trayek</b>
+                        <br>
+                        {{ $mobil->trayek->nama ?? '-' }}
+
                     </li>
                 </ul>
             </div>
@@ -50,6 +64,12 @@
             <div class="card w-100">
                 <div class="card-body">
                     <h5 class="mb-3 fw-bold">Buat SK</h5>
+
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                     <form class="row g-3">
                         <div class="col-md-12">
                             <div class="mb-3">
@@ -134,9 +154,9 @@
                         </div>
 
                         <div class="col-md-12">
-                            <div class="d-md-flex d-grid align-items-center gap-3">
-                                <button type="button" class="btn btn-primary px-4">Submit</button>
-                                <button type="button" class="btn btn-light px-4">Reset</button>
+                            <div class="gap-3 d-md-flex d-grid align-items-center">
+                                <button type="submit" class="px-4 btn btn-primary">Submit</button>
+                                <button type="button" class="px-4 btn btn-light">Reset</button>
                             </div>
                         </div>
                     </form>
@@ -153,6 +173,25 @@
                 <h6 class="mb-0 text-uppercase">History SK</h6>
                 <div class="my-3 border-top"></div>
                 <table class="table">
+                    <thead>
+                        <th>Nomor SK</th>
+                        <th>Tanggal</th>
+                        <th>Berlaku</th>
+                        <th>Berakhir</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody>
+                        @foreach ($sk as $item)
+                            <tr>
+                                <td>{{ $item->nomor_sk }}</td>
+                                <td>{{ $item->tanggal }}</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        @endforeach
+
+                    </tbody>
 
                 </table>
             </div>

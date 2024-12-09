@@ -2,9 +2,9 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-body p-4">
+                <div class="p-4 card-body">
                     <h5 class="mb-4">Form Kendaraan</h5>
-                    <form class="row g-3" wire:submit.prevent='save'>
+                    <form class="row g-3" wire:submit="save">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="input1" class="form-label">Nomor Kendaraan</label>
@@ -101,9 +101,9 @@
                         </div>
 
                         <div class="col-md-12">
-                            <div class="d-md-flex d-grid align-items-center gap-3">
-                                <button type="submit" class="btn btn-primary px-4">Submit</button>
-                                <button type="button" wire:click='batal' class="btn btn-light px-4">Reset</button>
+                            <div class="gap-3 d-md-flex d-grid align-items-center">
+                                <button type="submit" class="px-4 btn btn-primary">Submit</button>
+                                <button type="button" wire:click='batal' class="px-4 btn btn-light">Reset</button>
                             </div>
                         </div>
                     </form>
@@ -142,9 +142,13 @@
                                         <td>
                                             <div class="gap-3 table-actions d-flex align-items-center fs-6">
                                                 <div class="mr-2">
+                                                    <a href="{{ route('detail-kendaraan', $item->id) }}"
+                                                        class="btn btn-warning btn-sm">
+                                                        SK
+                                                    </a>
                                                     <button type="button"
                                                         wire:click="getEdit('{{ $item->id }}')"
-                                                        class="btn btn-warning  btn-sm">
+                                                        class="btn btn-warning btn-sm">
                                                         Edit
                                                     </button>
                                                     <button type="button" class="btn btn-danger btn-sm"
