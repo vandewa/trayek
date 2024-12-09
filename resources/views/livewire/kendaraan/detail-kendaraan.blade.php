@@ -70,7 +70,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <form class="row g-3">
+                    <form class="row g-3" wire:submit='save'>
                         <div class="col-md-12">
                             <div class="mb-3">
                                 <label for="input1" class="form-label">SK</label>
@@ -80,7 +80,15 @@
                                     <span class="form-text text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="mb-0">
+                            <div class="mb-3">
+                                <label for="input1" class="form-label">Tanggal SK</label>
+                                <input type="date" class="form-control" wire:model='form.tanggal_sk'
+                                    placeholder="Nomor Kendaraan">
+                                @error('form.tanggal_mulai_berlaku')
+                                    <span class="form-text text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
                                 <label for="input1" class="form-label">Tanggal Mulai</label>
                                 <input type="date" class="form-control" wire:model='form.tanggal_mulai_berlaku'
                                     placeholder="Nomor Kendaraan">
@@ -88,7 +96,7 @@
                                     <span class="form-text text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="mb-0">
+                            <div class="mb-3">
                                 <label for="input1" class="form-label">Tanggal Selesai</label>
                                 <input type="date" class="form-control" wire:model='form.tanggal_selesai_berlaku'
                                     placeholder="Nomor Kendaraan">
@@ -96,7 +104,7 @@
                                     <span class="form-text text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="mb-0">
+                            <div class="mb-3">
                                 <label for="input1" class="form-label">Nomor Uji Kendaraan</label>
                                 <input type="text" class="form-control" wire:model='form.no_uji_kendaraan'
                                     placeholder="Nomor Kendaraan">
@@ -106,7 +114,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="mb-0">
+                                    <div class="mb-3">
                                         <label for="input1" class="form-label">Sk Trayek Sebelumnya</label>
                                         <input type="file" class="form-control"
                                             wire:model='form.sk_trayek_sebelumnya' placeholder="SK trayek">
@@ -114,7 +122,7 @@
                                             <span class="form-text text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="mb-0">
+                                    <div class="mb-3">
                                         <label for="input1" class="form-label">SK Pengawasan Terakhir</label>
                                         <input type="file" class="form-control"
                                             wire:model='form.sk_pengawasan_terakhir' placeholder="SK trayek">
@@ -122,7 +130,7 @@
                                             <span class="form-text text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="mb-0">
+                                    <div class="mb-3">
                                         <label for="input1" class="form-label">Jasa Raharja</label>
                                         <input type="file" class="form-control" wire:model='form.fc_jasa_raharja'
                                             placeholder="SK trayek">
@@ -133,7 +141,7 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <div class="mb-0">
+                                    <div class="mb-3">
                                         <label for="input1" class="form-label">KIR</label>
                                         <input type="file" class="form-control" wire:model='form.fc_kir'
                                             placeholder="SK trayek">
@@ -141,7 +149,7 @@
                                             <span class="form-text text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    <div class="mb-0">
+                                    <div class="mb-3">
                                         <label for="input1" class="form-label">STNK</label>
                                         <input type="file" class="form-control" wire:model='form.fc_stnk'
                                             placeholder="SK trayek">
@@ -158,6 +166,10 @@
                                 <button type="submit" class="px-4 btn btn-primary">Submit</button>
                                 <button type="button" class="px-4 btn btn-light">Reset</button>
                             </div>
+                        </div>
+
+                        <div wire:loading wire:target="save, remove">
+                            Proses penyimpanan data .....
                         </div>
                     </form>
 
@@ -178,16 +190,20 @@
                         <th>Tanggal</th>
                         <th>Berlaku</th>
                         <th>Berakhir</th>
+                        <th>Kir</th>
                         <th>Action</th>
                     </thead>
                     <tbody>
                         @foreach ($sk as $item)
                             <tr>
-                                <td>{{ $item->nomor_sk }}</td>
-                                <td>{{ $item->tanggal }}</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $item->nomor }}</td>
+                                <td>{{ $item->tanggal_sk }}</td>
+                                <td>{{ $item->tanggal_mulai_berlaku }}</td>
+                                <td>{{ $item->tanggal_selesai_berlaku }}</td>
+                                <td>{{ $item->no_uji_kendaraan }}</td>
+                                <td>
+                                    <a href="{{ route('detail-sk', $item->id) }}">Detail</a>
+                                </td>
                             </tr>
                         @endforeach
 

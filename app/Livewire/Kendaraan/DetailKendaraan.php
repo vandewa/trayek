@@ -33,13 +33,28 @@ class DetailKendaraan extends Component
         $this->kendaraan();
     }
 
+    public function clear() {
+        $this->form = [
+            'tanggal_sk' => null,
+            'nomor' => null,
+            'tanggal_mulai_berlaku' => null,
+            'tanggal_selesai_berlaku' => null,
+            'sk_trayek_sebelumnya' => null,
+            'sk_pengawasan_terakhir' => null,
+            'fc_jasa_raharja' => null,
+            'fc_kir' => null,
+            'fc_stnk' => null,
+            'no_uji_kendaraan' => null,
+        ];
+    }
+
     public function kendaraan() {
         $this->mobil =  Kendaraan::with(['perusahaan', 'trayek'])->findOrFail($this->idnya);
     }
 
     public function save() {
 
-        dd("tekan");
+
         if($this->form['sk_trayek_sebelumnya']) {
            $sk_trayek_sebelumnya = $this->form['sk_trayek_sebelumnya']->store(path: 'sk/sk_trayek_sebelumnya');
         }
@@ -62,6 +77,7 @@ class DetailKendaraan extends Component
 
        $a =  Sk::create([
                 "nomor" => $this->form['nomor'],
+                "kendaraan_id" => $this->mobil->id,
                 "perusahaan_id" =>$this->mobil->perusahaan_id,
                 "tanggal_sk" =>  $this->form['tanggal_sk'],
                 "trayek_id" => $this->mobil->trayek_id,
@@ -78,14 +94,15 @@ class DetailKendaraan extends Component
 
         if($a){
             session()->flash('status', 'Post successfully updated.');
+            $this->clear();
+
         }
-
-
-
     }
     public function render()
     {
-        $data = Sk::with(['perusahaan', 'trayek', 'kendaraans'])->paginate(10);
+        $data = Sk::with(['perusahaan', 'trayek', 'kendaraans'])
+        ->where('kendaraan_id', $this->mobil->id)
+        ->orderBy('id', 'desc')->paginate(10);
         return view('livewire.kendaraan.detail-kendaraan', [
             'sk' => $data
         ]);
