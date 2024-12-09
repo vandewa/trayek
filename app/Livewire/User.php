@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Perusahaan;
 use Livewire\Component;
 use App\Models\Role;
 use App\Models\User as ModelsUser;
@@ -9,32 +10,42 @@ use App\Models\User as ModelsUser;
 class User extends Component
 {
 
-    public $role, $listRole, $konfirmasi_password, $idHapus, $edit = false, $user;
+    public $role, $listRole, $konfirmasi_password, $idHapus, $edit = false, $user, $perusahaan, $listPerusahaan;
 
     public $form = [
         'name' => null,
         'email' => null,
         'password' => null,
+        'nomor' => null,
+        'perusahaan_id' => null,
     ];
 
 
     public function mount($id = '')
     {
         if ($id) {
-            $user = ModelsUser::find($id)->only(['name', 'email']);
+            $user = ModelsUser::find($id)->only(['name', 'email', 'nomor', 'perusahaan_id']);
             $data = ModelsUser::find($id);
             $this->form = $user;
             $this->role = $data->roles()->first()->id;
             $this->edit = true;
             $this->user = $id;
+            $this->perusahaan = $data->perusahaan_id;
         }
 
         $this->listRole = Role::all()->toArray();
+        $this->listPerusahaan = Perusahaan::all()->toArray();
     }
 
     public function ambilRole()
     {
         return Role::all()->toArray();
+
+    }
+
+    public function ambilPerusahaan()
+    {
+        return Perusahaan::all()->toArray();
 
     }
 
@@ -55,7 +66,7 @@ class User extends Component
           })
         JS);
 
-        return redirect(route('master.user.index'));
+        return redirect(route('master.user-index'));
     }
 
     public function store()
@@ -69,6 +80,7 @@ class User extends Component
         ]);
 
         $this->form['password'] = bcrypt($this->form['password']);
+        $this->form['perusahaan_id'] = $this->perusahaan;
         $a = ModelsUser::create($this->form);
         $a->addrole($this->role);
     }
@@ -86,6 +98,8 @@ class User extends Component
             $this->form['password'] = bcrypt($this->form['password']);
         }
 
+        $this->form['perusahaan_id'] = $this->perusahaan;
+
         ModelsUser::find($this->user)->update($this->form);
         $a = ModelsUser::find($this->user);
         $a->syncRoles([$this->role]);
@@ -98,7 +112,8 @@ class User extends Component
     public function render()
     {
         return view('livewire.user', [
-            'listRole' => $this->ambilRole()
+            'listRole' => $this->ambilRole(),
+            'listPerusahaan' => $this->ambilPerusahaan()
         ]);
     }
 }

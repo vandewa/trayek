@@ -18,6 +18,9 @@ return [
         'admin' => [
             'users' => 'c,r,u,d',
         ],
+        'perusahaan' => [
+            'users' => 'c,r,u,d',
+        ],
         'user' => [
             'users' => 'c,r,u,d',
         ],

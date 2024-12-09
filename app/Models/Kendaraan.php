@@ -14,18 +14,21 @@ class Kendaraan extends Model
   public function scopeCari($filter, $value)
   {
     if ($value) {
-      return $this->where('nama', 'like', "%$value%");
+      return $this->where('no_kendaraan', 'like', "%$value%");
     }
   }
 
   public function perusahaan()
   {
-      return $this->belongsTo(Perusahaan::class, 'perusahaan_id');
+    return $this->belongsTo(Perusahaan::class, 'perusahaan_id');
   }
 
-  public function trayek() {
-        return $this->belongsTo(Trayek::class, 'trayek_id');
+  public function trayek()
+  {
+    return $this->belongsTo(Trayek::class, 'trayek_id');
   }
+
+
 
 
 }

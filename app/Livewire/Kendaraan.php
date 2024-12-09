@@ -131,7 +131,14 @@ class Kendaraan extends Component
 
     public function render()
     {
-        $data = ModelsKendaraan::cari($this->cari)->paginate(10);
+        $data = ModelsKendaraan::with(['perusahaan'])->cari($this->cari);
+
+        // if (!auth()->user()->hasRole(['superadmin', 'admin'])) {
+
+        //     $data = $data->where('perusahaan_id', auth()->user()->perusahaan_id);
+        // }
+
+        $data = $data->paginate(10);
 
         return view('livewire.kendaraan', [
             'post' => $data,
