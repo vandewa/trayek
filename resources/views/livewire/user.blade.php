@@ -68,12 +68,28 @@
                                                                                 </div>
                                                                             </div>
 
+                                                                            <div class="row mb-2">
+                                                                                <label for="inputEmail3"
+                                                                                    class="col-sm-3 col-form-label">WhatsApp
+                                                                                </label>
+                                                                                <div class="col-sm-9">
+                                                                                    <input type="number"
+                                                                                        class="form-control"
+                                                                                        wire:model='form.nomor'
+                                                                                        placeholder="Nomor WhatsApp">
+                                                                                    @error('form.nomor')
+                                                                                        <span
+                                                                                            class="form-text text-danger">{{ $message }}</span>
+                                                                                    @enderror
+                                                                                </div>
+                                                                            </div>
+
                                                                             <div class="row mb-3">
                                                                                 <label for="inputEmail3"
                                                                                     class="col-sm-3 col-form-label">Role</label>
                                                                                 <div class="col-sm-9">
                                                                                     <select class="form-control"
-                                                                                        wire:model='role'>
+                                                                                        wire:model.live='role'>
                                                                                         <option value="">Pilih
                                                                                             Role</option>
                                                                                         @foreach ($listRole ?? [] as $item)
@@ -89,6 +105,31 @@
                                                                                     @enderror
                                                                                 </div>
                                                                             </div>
+
+                                                                            @if ($role == '3')
+                                                                                <div class="row mb-3">
+                                                                                    <label for="inputEmail3"
+                                                                                        class="col-sm-3 col-form-label">Perusahaan</label>
+                                                                                    <div class="col-sm-9">
+                                                                                        <select class="form-control"
+                                                                                            wire:model.live='perusahaan'>
+                                                                                            <option value="">Pilih
+                                                                                                Perusahaan</option>
+                                                                                            @foreach ($listPerusahaan ?? [] as $item)
+                                                                                                <option
+                                                                                                    value="{{ $item['id'] }}">
+                                                                                                    {{ $item['nama'] }}
+                                                                                                </option>
+                                                                                            @endforeach
+                                                                                        </select>
+                                                                                        @error('perusahaan')
+                                                                                            <span
+                                                                                                class="form-text text-danger">{{ $message }}</span>
+                                                                                        @enderror
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            @endif
 
                                                                             @if ($edit)
                                                                                 <legend>Ganti Password</legend>
