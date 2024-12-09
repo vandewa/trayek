@@ -27,6 +27,10 @@ class DetailKendaraan extends Component
         'fc_kir' => null,
         'fc_stnk' => null,
         'no_uji_kendaraan' => null,
+        'fc_jasa_raharja' => null,
+        'fc_kir' => null,
+        'fc_stnk' => null,
+        'fc_jasa_raharja' => null,
     ];
 
     public function mount($id) {
@@ -47,6 +51,10 @@ class DetailKendaraan extends Component
             'fc_kir' => null,
             'fc_stnk' => null,
             'no_uji_kendaraan' => null,
+            'fc_jasa_raharja' => null,
+            'fc_kir' => null,
+            'fc_stnk' => null,
+            'fc_jasa_raharja' => null,
         ];
 
         $this->idEdit = false;
@@ -97,28 +105,25 @@ class DetailKendaraan extends Component
             "no_uji_kendaraan" => $this->form['no_uji_kendaraan'],
         ];
 
-        if($this->form['sk_trayek_sebelumnya']??null) {
-            $sk_trayek_sebelumnya = $this->form['sk_trayek_sebelumnya']->store(path: 'sk/sk_trayek_sebelumnya');
+        if(isset($this->form['sk_trayek_sebelumnya'])) {
+            $sk_trayek_sebelumnya = $this->form['sk_trayek_sebelumnya']->store( 'sk/sk_trayek_sebelumnya');
             $dataUpdate+[ "sk_trayek_sebelumnya" => $sk_trayek_sebelumnya??null];
          }
-         if($this->form['sk_pengawasan_terakhir']??null) {
-            $sk_pengawasan_terakhir = $this->form['sk_pengawasan_terakhir']->store(path: 'sk/sk_pengawasan_terakhir');
+         if(isset($this->form['sk_pengawasan_terakhir'])) {
+            $sk_pengawasan_terakhir = $this->form['sk_pengawasan_terakhir']->store( 'sk/sk_pengawasan_terakhir');
             $dataUpdate+[ "sk_pengawasan_terakhir" => $sk_pengawasan_terakhir??null];
         }
-         if($this->form['sk_pengawasan_terakhir']??null) {
-            $sk_pengawasan_terakhir = $this->form['sk_pengawasan_terakhir']->store(path: 'sk/sk_pengawasan_terakhir');
-            $dataUpdate+[ "sk_pengawasan_terakhir" => $sk_pengawasan_terakhir??null];
-        }
-         if($this->form['fc_jasa_raharja']??null) {
-            $fc_jasa_raharja = $this->form['fc_jasa_raharja']->store(path: 'sk/fc_jasa_raharja');
+
+         if(isset($this->form['fc_jasa_raharja'])) {
+            $fc_jasa_raharja = $this->form['fc_jasa_raharja']->store( 'sk/fc_jasa_raharja');
             $dataUpdate+[ "fc_jasa_raharja" => $fc_jasa_raharja??null];
         }
-         if($this->form['fc_kir']??null) {
-            $fc_jasa_raharja = $this->form['fc_kir']->store(path: 'sk/fc_kir');
+         if(isset($this->form['fc_kir'])) {
+            $fc_jasa_raharja = $this->form['fc_kir']->store( 'sk/fc_kir');
             $dataUpdate+[ "fc_kir" => $fc_kir??null];
         }
-         if($this->form['fc_stnk']??null) {
-            $fc_stnk = $this->form['fc_stnk']->store(path: 'sk/fc_stnk');
+         if(($this->form['fc_stnk'])) {
+            $fc_stnk = $this->form['fc_stnk']->store( 'sk/fc_stnk');
             $dataUpdate+[ "fc_stnk" => $fc_stnk??null];
          }
 
@@ -140,25 +145,26 @@ class DetailKendaraan extends Component
             'form.tanggal_mulai_berlaku' => 'required',
             'form.tanggal_selesai_berlaku' => 'required',
             'form.no_uji_kendaraan' => 'required',
+
         ]);
 
-        if($this->form['sk_trayek_sebelumnya']) {
-           $sk_trayek_sebelumnya = $this->form['sk_trayek_sebelumnya']->store(path: 'sk/sk_trayek_sebelumnya');
+
+        if(isset($this->form['sk_trayek_sebelumnya'])) {
+           $sk_trayek_sebelumnya = $this->form['sk_trayek_sebelumnya']->store( 'sk/sk_trayek_sebelumnya');
+
         }
-        if($this->form['sk_pengawasan_terakhir']) {
-           $sk_pengawasan_terakhir = $this->form['sk_pengawasan_terakhir']->store(path: 'sk/sk_pengawasan_terakhir');
+        if(isset($this->form['sk_pengawasan_terakhir'])) {
+           $sk_pengawasan_terakhir = $this->form['sk_pengawasan_terakhir']->store( 'sk/sk_pengawasan_terakhir');
         }
-        if($this->form['sk_pengawasan_terakhir']) {
-           $sk_pengawasan_terakhir = $this->form['sk_pengawasan_terakhir']->store(path: 'sk/sk_pengawasan_terakhir');
+
+        if(isset($this->form['fc_jasa_raharja'])) {
+           $fc_jasa_raharja = $this->form['fc_jasa_raharja']->store( 'sk/fc_jasa_raharja');
         }
-        if($this->form['fc_jasa_raharja']) {
-           $fc_jasa_raharja = $this->form['fc_jasa_raharja']->store(path: 'sk/fc_jasa_raharja');
+        if(isset($this->form['fc_kir'])) {
+           $fc_jasa_raharja = $this->form['fc_kir']->store( 'sk/fc_kir');
         }
-        if($this->form['fc_kir']) {
-           $fc_jasa_raharja = $this->form['fc_kir']->store(path: 'sk/fc_kir');
-        }
-        if($this->form['fc_stnk']) {
-           $fc_stnk = $this->form['fc_stnk']->store(path: 'sk/fc_stnk');
+        if(($this->form['fc_stnk'])) {
+           $fc_stnk = $this->form['fc_stnk']->store( 'sk/fc_stnk');
         }
 
 
@@ -172,7 +178,6 @@ class DetailKendaraan extends Component
                 "tanggal_selesai_berlaku" => $this->form['tanggal_selesai_berlaku'],
                 "no_uji_kendaraan" => $this->form['no_uji_kendaraan'],
                 "sk_trayek_sebelumnya" => $sk_trayek_sebelumnya??null,
-                "sk_pengawasan_terakhir" => $sk_pengawasan_terakhir??null,
                 "sk_pengawasan_terakhir" => $sk_pengawasan_terakhir??null,
                 "fc_jasa_raharja" => $fc_jasa_raharja??null,
                 "fc_kir" => $fc_kir??null,
