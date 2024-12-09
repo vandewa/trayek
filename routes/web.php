@@ -56,7 +56,7 @@ Route::middleware([
     Route::get('sk-kendaraan', SkKendaraan::class)->name('sk-kendaraan');
     Route::get('sk', Sk::class)->name('sk');
     Route::get('detail-sk/{id}', DetailSk::class)->name('detail-sk');
-    Route::get('/export-sk-word', ExportSkWord::class)->name('export.sk.word');
+    Route::get('/export-sk-word/{id}', ExportSkWord::class)->name('export.sk.word');
     Route::get('/detail-kendaraan/{id}', DetailKendaraan::class)->name('detail-kendaraan');
     Route::get('kendaraan-perusahaan', Kendaraan::class)->name('kendaraan');
 

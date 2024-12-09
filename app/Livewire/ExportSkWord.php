@@ -11,7 +11,7 @@ class ExportSkWord extends Component
 {
     public $skId;
 
-    public function mount() {
+    public function mount($id) {
         $this->skId = 3;
         $this->exportWord();
     }
@@ -66,12 +66,15 @@ class ExportSkWord extends Component
         // Simpan dokumen hasil
         $templateProcessor->saveAs($outputPath);
 
+        return redirect()->route('detail-sk', $this->skId);
+
         // Berikan respons untuk unduhan
-        return response()->download($outputPath)->deleteFileAfterSend(true);
+        // return response()->download($outputPath)->deleteFileAfterSend(true);
     }
 
-    public function render()
-    {
-        return view('livewire.export-sk-word');
-    }
+    // public function render()
+    // {
+    //     return redirect()->back();
+    //     return view('livewire.export-sk-word');
+    // }
 }

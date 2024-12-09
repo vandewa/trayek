@@ -175,7 +175,7 @@
                                         <td> {{ $item->trayek->nama ?? '-' }}</td>
                                         <td> {{ $item->tanggal_mulai_berlaku ?? '-' }}</td>
                                         <td> {{ $item->tanggal_selesai_berlaku ?? '-' }}</td>
-                                        <td> {{ $item->sk_kendaraan_count ?? '-' }}</td>
+
                                         <td>
                                             <div class="gap-3 table-actions d-flex align-items-center fs-6">
                                                 <div class="mr-2">

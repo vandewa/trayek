@@ -194,7 +194,7 @@ class Sk extends Component
 
     public function render()
     {
-        $data = ModelsSk::withCount(['skKendaraan'])->paginate(10);
+        $data = ModelsSk::paginate(10);
 
         return view('livewire.sk', [
             'post' => $data,
