@@ -12,11 +12,11 @@ class Sk extends Model
     protected $table = 'sk';
     protected $guarded = []; // Tidak ada kolom yang dijaga
 
-    protected $casts = [
-        'tanggal_sk' => 'date',
-        'tanggal_mulai_berlaku' => 'date',
-        'tanggal_selesai_berlaku' => 'date',
-    ];
+    // protected $casts = [
+    //     'tanggal_sk' => 'date',
+    //     'tanggal_mulai_berlaku' => 'date',
+    //     'tanggal_selesai_berlaku' => 'date',
+    // ];
 
 
     public function perusahaan()

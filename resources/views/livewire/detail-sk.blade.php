@@ -26,7 +26,8 @@
                                             <strong>Tanggal SK:</strong>
                                         </div>
                                         <div class="col-md-8">
-                                            {{ $sk->tanggal_sk ? $sk->tanggal_sk->format('d-m-Y') : '-' }}
+                                            {{ $sk->tanggal_sk ? \Carbon\Carbon::parse($sk->tanggal_sk)->format('d-m-Y') : '-' }}
+
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -50,7 +51,8 @@
                                             <strong>Tanggal Mulai Berlaku:</strong>
                                         </div>
                                         <div class="col-md-8">
-                                            {{ $sk->tanggal_mulai_berlaku ? $sk->tanggal_mulai_berlaku->format('d-m-Y') : '-' }}
+                                            {{ $sk->tanggal_mulai_berlaku ? \Carbon\Carbon::parse($sk->tanggal_mulai_berlaku)->format('d-m-Y') : '-' }}
+
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -58,7 +60,9 @@
                                             <strong>Tanggal Selesai Berlaku:</strong>
                                         </div>
                                         <div class="col-md-8">
-                                            {{ $sk->tanggal_selesai_berlaku ? $sk->tanggal_selesai_berlaku->format('d-m-Y') : '-' }}
+                                            {{ $sk->tanggal_selesai_berlaku ? \Carbon\Carbon::parse($sk->tanggal_selesai_berlaku)->format('d-m-Y') : '-' }}
+
+
                                         </div>
                                     </div>
                                     <div class="mt-4 d-flex">

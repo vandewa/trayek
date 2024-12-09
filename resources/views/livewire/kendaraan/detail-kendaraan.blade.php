@@ -89,7 +89,7 @@
                                 <label for="input1" class="form-label">SK</label>
                                 <input type="text" class="form-control" wire:model='form.nomor'
                                     placeholder="Nomor Kendaraan">
-                                @error('form.sk_id')
+                                @error('form.nomor')
                                     <span class="form-text text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -97,7 +97,7 @@
                                 <label for="input1" class="form-label">Tanggal SK</label>
                                 <input type="date" class="form-control" wire:model='form.tanggal_sk'
                                     placeholder="Nomor Kendaraan">
-                                @error('form.tanggal_mulai_berlaku')
+                                @error('form.tanggal_sk')
                                     <span class="form-text text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -215,7 +215,9 @@
                                 <td>{{ $item->tanggal_selesai_berlaku }}</td>
                                 <td>{{ $item->no_uji_kendaraan }}</td>
                                 <td>
-                                    <a href="{{ route('detail-sk', $item->id) }}">Detail</a>
+                                    <button wire:click='getEdit({{ $item->id }})'
+                                        class="btn btn-warning">Edit</button>
+                                    <a href="{{ route('detail-sk', $item->id) }}" class="btn btn-primary">Detail</a>
                                 </td>
                             </tr>
                         @endforeach

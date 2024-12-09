@@ -56,9 +56,22 @@ class DetailKendaraan extends Component
         $this->mobil =  Kendaraan::with(['perusahaan', 'trayek'])->findOrFail($this->idnya);
     }
 
+    public function getEdit($id) {
+        $a = Sk::findOrFail($id);
+        $this->form = [
+            'tanggal_sk' => $a->tanggal_sk,
+            'nomor' => $a->nomor,
+            'tanggal_mulai_berlaku' => $a->tanggal_mulai_berlaku,
+            'tanggal_selesai_berlaku' => $a->tanggal_selesai_berlaku,
+            'no_uji_kendaraan' => $a->no_uji_kendaraan,
+        ];
+        $this->edit = true;
+        $this->idEdit = $id;
+    }
+
     public function save() {
         if($this->edit) {
-
+            $this->update();
         } else {
             $this->store();
         }
@@ -84,27 +97,27 @@ class DetailKendaraan extends Component
             "no_uji_kendaraan" => $this->form['no_uji_kendaraan'],
         ];
 
-        if($this->form['sk_trayek_sebelumnya']) {
+        if($this->form['sk_trayek_sebelumnya']??null) {
             $sk_trayek_sebelumnya = $this->form['sk_trayek_sebelumnya']->store(path: 'sk/sk_trayek_sebelumnya');
             $dataUpdate+[ "sk_trayek_sebelumnya" => $sk_trayek_sebelumnya??null];
          }
-         if($this->form['sk_pengawasan_terakhir']) {
+         if($this->form['sk_pengawasan_terakhir']??null) {
             $sk_pengawasan_terakhir = $this->form['sk_pengawasan_terakhir']->store(path: 'sk/sk_pengawasan_terakhir');
             $dataUpdate+[ "sk_pengawasan_terakhir" => $sk_pengawasan_terakhir??null];
         }
-         if($this->form['sk_pengawasan_terakhir']) {
+         if($this->form['sk_pengawasan_terakhir']??null) {
             $sk_pengawasan_terakhir = $this->form['sk_pengawasan_terakhir']->store(path: 'sk/sk_pengawasan_terakhir');
             $dataUpdate+[ "sk_pengawasan_terakhir" => $sk_pengawasan_terakhir??null];
         }
-         if($this->form['fc_jasa_raharja']) {
+         if($this->form['fc_jasa_raharja']??null) {
             $fc_jasa_raharja = $this->form['fc_jasa_raharja']->store(path: 'sk/fc_jasa_raharja');
             $dataUpdate+[ "fc_jasa_raharja" => $fc_jasa_raharja??null];
         }
-         if($this->form['fc_kir']) {
+         if($this->form['fc_kir']??null) {
             $fc_jasa_raharja = $this->form['fc_kir']->store(path: 'sk/fc_kir');
             $dataUpdate+[ "fc_kir" => $fc_kir??null];
         }
-         if($this->form['fc_stnk']) {
+         if($this->form['fc_stnk']??null) {
             $fc_stnk = $this->form['fc_stnk']->store(path: 'sk/fc_stnk');
             $dataUpdate+[ "fc_stnk" => $fc_stnk??null];
          }
