@@ -18,5 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call(LaratrustSeeder::class);
         $this->call(ComCodeSeeder::class);
         $this->call(KepalaDinasSeeder::class);
+        $this->call(PerusahaanSeeder::class);
+        $this->call(TrayekSeeder::class);
+        $this->call(KendaraanSeeder::class);
     }
 }
