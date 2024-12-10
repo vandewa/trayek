@@ -34,4 +34,9 @@ class Sk extends Model
     {
         return $this->belongsToMany(Kendaraan::class, 'sk_kendaraans', 'sk_id', 'kendaraan_id');
     }
+
+    public function pengawasan()
+    {
+        return $this->hasOne(SkPengawasan::class, 'sk_id'); // Sesuaikan foreign key jika berbeda
+    }
 }
