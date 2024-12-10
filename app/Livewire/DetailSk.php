@@ -2,17 +2,23 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Components\PengawasanComponent;
 use Livewire\Component;
 use App\Models\Sk;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Kendaraan;
+use App\Models\SkPengawasan;
 use PhpOffice\PhpWord\TemplateProcessor;
+use Livewire\WithPagination;
+use Livewire\Attributes\On;
 
 class DetailSk extends Component
 {
+    use WithPagination;
     public $skId;
     public $sk;
     public $mobil;
+    public $form = false;
 
     public function mount($id)
     {
@@ -88,6 +94,28 @@ class DetailSk extends Component
         $templateProcessor->saveAs($outputPath);
     }
 
+    #[On('detail-sk-refresh')]
+    public function refresh() {
+        $this->tutupForm();
+    }
+
+    public function editSkPengawaan($id) {
+        $this->tampilkanForm();
+        $this->dispatch('edit-sk-pengawasan', id: $id)->to(PengawasanComponent::class);
+
+    }
+
+    public function tampilkanForm() {
+        $this->form = true;
+    }
+    public function tutupForm() {
+        $this->form = false;
+    }
+
+    public function tambahSkPengawasan() {
+
+    }
+
     public function render()
     {
         $filePath = 'public/Surat_keputusan_'.$this->skId.'.docx';
@@ -96,9 +124,12 @@ class DetailSk extends Component
         } else {
             $file = false;
         }
+
+        $data = SkPengawasan::where('sk_id', $this->skId)->paginate(10);
         return view('livewire.detail-sk', [
             'cek_file' => $file,
-            'path' => $filePath
+            'path' => $filePath,
+            'pengawasan' => $data
         ]);
     }
 }
