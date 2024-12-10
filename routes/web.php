@@ -47,11 +47,10 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/', [DashboardController::class, 'index'])->name('index');
+    Route::get('/', Dashboard::class)->name('index');
+    // Route::get('/', [DashboardController::class, 'index'])->name('index');
     Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
-    Route::post('/cetak', [DashboardController::class, 'cetak'])->name('cetak');
 
-    Route::get('dashboard', Dashboard::class)->name('dashboard');
     Route::get('sk-pengawasan', SkPengawasan::class)->name('sk-pengawasan');
     Route::get('sk-kendaraan', SkKendaraan::class)->name('sk-kendaraan');
     Route::get('sk', Sk::class)->name('sk');

@@ -275,8 +275,8 @@
     </script> --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @stack('js')
-    {{-- @livewireScripts
-    @livewireChartsScripts --}}
+    @livewireScripts
+    @livewireChartsScripts
 
 </body>
 
