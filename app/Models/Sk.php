@@ -30,9 +30,13 @@ class Sk extends Model
     }
 
 
+    // public function kendaraans()
+    // {
+    //     return $this->belongsToMany(Kendaraan::class, 'sk_kendaraans', 'sk_id', 'kendaraan_id');
+    // }
     public function kendaraans()
     {
-        return $this->belongsToMany(Kendaraan::class, 'sk_kendaraans', 'sk_id', 'kendaraan_id');
+        return $this->belongsTo(Kendaraan::class, 'kendaraan_id');
     }
 
     public function pengawasan()

@@ -54,6 +54,8 @@ class DetailSk extends Component
         // Ambil data SK
         $sk = Sk::with(['perusahaan', 'trayek', 'kendaraans'])->find($this->skId);
 
+
+
         if (!$sk) {
             session()->flash('error', 'Data SK tidak ditemukan.');
             return;
@@ -73,22 +75,26 @@ class DetailSk extends Component
         $templateProcessor->setValue('nama_badan_hukum', $sk->perusahaan->nama ?? '-');
         $templateProcessor->setValue('nama_pimpinan', $sk->perusahaan->pemimpin ?? '-');
         $templateProcessor->setValue('alamat_badan_hukum', $sk->perusahaan->alamat ?? '-');
+        $templateProcessor->setValue('trayek', $sk->trayek->nama ?? '-');
+        $templateProcessor->setValue('berlaku', $sk->perusahaan->alamat ?? '-');
 
         // Isi tabel kendaraan
-        $kendaraans = $sk->kendaraans;
-        $templateProcessor->cloneRow('no_urut', count($kendaraans));
-        foreach ($kendaraans as $index => $kendaraan) {
-            $rowIndex = $index + 1;
-            $templateProcessor->setValue("no_urut#$rowIndex", $index + 1);
-            $templateProcessor->setValue("nomor_induk#$rowIndex", $kendaraan->nomor_induk ?? '-');
-            $templateProcessor->setValue("nomor_kendaraan#$rowIndex", $kendaraan->nomor_kendaraan ?? '-');
-            $templateProcessor->setValue("nomor_uji#$rowIndex", $kendaraan->nomor_uji ?? '-');
-            $templateProcessor->setValue("merk#$rowIndex", $kendaraan->merk ?? '-');
-            $templateProcessor->setValue("tahun_pembuatan#$rowIndex", $kendaraan->tahun_pembuatan ?? '-');
-            $templateProcessor->setValue("daya_angkut#$rowIndex", $kendaraan->daya_angkut ?? '-');
-            $templateProcessor->setValue("sifat_perjalanan#$rowIndex", $kendaraan->sifat_perjalanan ?? '-');
-            $templateProcessor->setValue("kode_trayek#$rowIndex", $kendaraan->kode_trayek ?? '-');
-        }
+        $kendaraan = $sk->kendaraans;
+        // array_push($kendaraans , $sk->kendaraans);
+        // dd($kendaraans);
+        // $templateProcessor->cloneRow('no_urut', count($kendaraans));
+        // foreach ($kendaraans as $index => $kendaraan) {
+        //     $rowIndex = $index + 1;
+            $templateProcessor->setValue("no_urut", 1);
+            $templateProcessor->setValue("nomor_induk", $kendaraan->nomor_induk ?? '-');
+            $templateProcessor->setValue("nomor_kendaraan", $kendaraan->nomor_kendaraan ?? '-');
+            $templateProcessor->setValue("nomor_uji", $kendaraan->nomor_uji ?? '-');
+            $templateProcessor->setValue("merk", $kendaraan->merk ?? '-');
+            $templateProcessor->setValue("tahun_pembuatan", $kendaraan->tahun_pembuatan ?? '-');
+            $templateProcessor->setValue("daya_angkut", $kendaraan->daya_angkut ?? '-');
+            $templateProcessor->setValue("sifat_perjalanan", $kendaraan->sifat_perjalanan ?? '-');
+            $templateProcessor->setValue("kode_trayek", $kendaraan->kode_trayek ?? '-');
+        // }
 
         // Simpan dokumen hasil
         $templateProcessor->saveAs($outputPath);

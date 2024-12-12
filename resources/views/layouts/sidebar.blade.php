@@ -7,12 +7,12 @@
             </a>
         </li>
 
-        <li>
+        {{-- <li>
             <a href="{{ route('sk') }}">
                 <div class="parent-icon"><span class="material-symbols-outlined">book</span></div>
                 <div class="menu-title">SK</div>
             </a>
-        </li>
+        </li> --}}
         <li>
             <a href="{{ route('kendaraan') }}">
                 <div class="parent-icon"><span class="material-symbols-outlined">book</span></div>
