@@ -28,6 +28,7 @@
     <link href="{{ asset('roksyn/ltr/assets/css/semi-dark-theme.css') }}" rel="stylesheet">
     <link href="{{ asset('roksyn/ltr/assets/css/minimal-theme.css') }}" rel="stylesheet">
     <link href="{{ asset('roksyn/ltr/assets/css/shadow-theme.css') }}" rel="stylesheet">
+
     @stack('css')
     @vite([])
 

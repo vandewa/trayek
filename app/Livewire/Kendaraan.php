@@ -133,10 +133,9 @@ class Kendaraan extends Component
     {
         $data = ModelsKendaraan::with(['perusahaan'])->cari($this->cari);
 
-        // if (!auth()->user()->hasRole(['superadmin', 'admin'])) {
-
-        //     $data = $data->where('perusahaan_id', auth()->user()->perusahaan_id);
-        // }
+        if (!auth()->user()->hasRole(['superadmin', 'admin'])) {
+            $data = $data->where('perusahaan_id', auth()->user()->perusahaan_id);
+        }
 
         $data = $data->paginate(10);
 

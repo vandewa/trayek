@@ -118,7 +118,7 @@ class Perusahaan extends Component
 
     public function render()
     {
-        $data = ModelsPerusahaan::paginate(10);
+        $data = ModelsPerusahaan::cari($this->cari)->paginate(10);
 
         return view('livewire.perusahaan', [
             'post' => $data,

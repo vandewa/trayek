@@ -108,7 +108,7 @@ class Trayek extends Component
 
     public function render()
     {
-        $data = ModelsTrayek::paginate(10);
+        $data = ModelsTrayek::cari($this->cari)->paginate(10);
 
         return view('livewire.trayek', [
             'post' => $data,

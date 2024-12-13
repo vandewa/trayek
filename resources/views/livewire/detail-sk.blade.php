@@ -68,11 +68,12 @@
                                                 </div>
                                             </div>
                                             <div class="mt-4 d-flex">
-                                                <button wire:click='exportWord' class="btn btn-primary me-2">Generate
+                                                <button wire:click='exportWord'
+                                                    class="btn btn-sm btn-primary me-2">Generate
                                                     SK</button>
                                                 @if ($cek_file)
                                                     <a href="{{ route('helper.show-picture', ['path' => $path]) }}"
-                                                        class="btn btn-primary">Download Draft</a>
+                                                        class="btn btn-sm btn-primary">Download Draft</a>
                                                 @endif
                                             </div>
                                         </div>
@@ -91,7 +92,7 @@
                                                         <td>
                                                             @if ($sk->sk_trayek_sebelumnya)
                                                                 <a href="{{ route('helper.show-picture', ['path' => $sk->sk_trayek_sebelumnya]) }}"
-                                                                    class="btn btn-primary"> Download</a>
+                                                                    class="btn btn-sm btn-primary"> Download</a>
                                                             @endif
                                                         </td>
                                                     </tr>
@@ -101,7 +102,7 @@
                                                         <td>
                                                             @if ($sk->sk_pengawasan_terakhir)
                                                                 <a href="{{ route('helper.show-picture', ['path' => $sk->sk_pengawasan_terakhir]) }}"
-                                                                    class="btn btn-primary"> Download</a>
+                                                                    class="btn btn-sm btn-primary"> Download</a>
                                                             @endif
                                                         </td>
                                                     </tr>
@@ -111,7 +112,7 @@
                                                         <td>
                                                             @if ($sk->fc_jasa_raharja)
                                                                 <a href="{{ route('helper.show-picture', ['path' => $sk->fc_jasa_raharja]) }}"
-                                                                    class="btn btn-primary"> Download</a>
+                                                                    class="btn btn-sm btn-primary"> Download</a>
                                                             @endif
                                                         </td>
                                                     </tr>
@@ -121,7 +122,7 @@
                                                         <td>
                                                             @if ($sk->fc_kir)
                                                                 <a href="{{ route('helper.show-picture', ['path' => $sk->fc_kir]) }}"
-                                                                    class="btn btn-primary"> Download</a>
+                                                                    class="btn btn-sm btn-primary"> Download</a>
                                                             @endif
                                                         </td>
                                                     </tr>
@@ -131,7 +132,7 @@
                                                         <td>
                                                             @if ($sk->fc_stnk)
                                                                 <a href="{{ route('helper.show-picture', ['path' => $sk->fc_stnk]) }}"
-                                                                    class="btn btn-primary"> Download</a>
+                                                                    class="btn btn-sm btn-primary"> Download</a>
                                                             @endif
                                                         </td>
                                                     </tr>
@@ -204,50 +205,50 @@
                                 <div class="p-4 card-body">
                                     <div class="card w-100">
                                         <div class="card-body">
-                                            <h5 class="mb-3 text-center fw-bold">SK Pengawaan
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <table class="table">
-                                                            <thead>
-                                                                <th>Nomor</th>
-                                                                <th>Tanggal</th>
-                                                                <th>Berlaku</th>
-                                                                <th>Action</th>
-                                                            </thead>
-                                                            <tbody>
-                                                                @foreach ($pengawasan as $item)
-                                                                    <tr>
-                                                                        <td>{{ $item->nomor }}</td>
-                                                                        <td>{{ $item->tanggal_sk }}</td>
-                                                                        <td>{{ $item->tanggal_mulai_berlaku }} S/D
-                                                                            {{ $item->tanggal_selesai_berlaku }}</td>
-                                                                        <td>
-                                                                            <button class="btn btn-primary"
-                                                                                wire:click="$dispatch('detail-sk-refresh', { id: {{ $item->id }} })">Detail</button>
-                                                                            <button class="btn btn-warning"
-                                                                                wire:click='editSkPengawaan({{ $item->id }})'>Edit
-                                                                            </button>
-                                                                            <button class="btn btn-danger">Hapus
-                                                                            </button>
-                                                                        </td>
-                                                                    </tr>
-                                                                @endforeach
-                                                            </tbody>
-                                                        </table>
+                                            <h5 class="mb-3 text-center fw-bold">SK Pengawasan</h5>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <th>Nomor</th>
+                                                            <th>Tanggal</th>
+                                                            <th>Berlaku</th>
+                                                            <th>Action</th>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach ($pengawasan as $item)
+                                                                <tr>
+                                                                    <td>{{ $item->nomor }}</td>
+                                                                    <td>{{ $item->tanggal_sk }}</td>
+                                                                    <td>{{ $item->tanggal_mulai_berlaku }} S/D
+                                                                        {{ $item->tanggal_selesai_berlaku }}</td>
+                                                                    <td>
+                                                                        <button class="btn btn-sm btn-primary"
+                                                                            wire:click="$dispatch('detail-sk-refresh', { id: {{ $item->id }} })">Detail</button>
+                                                                        <button class="btn btn-sm btn-warning"
+                                                                            wire:click='editSkPengawaan({{ $item->id }})'>Edit
+                                                                        </button>
+                                                                        <button class="btn btn-sm btn-danger">Hapus
+                                                                        </button>
+                                                                    </td>
+                                                                </tr>
+                                                            @endforeach
+                                                        </tbody>
+                                                    </table>
 
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="pull-right col-md-12">
-                                                            <button class="btn btn-primary"
-                                                                wire:click='tampilkanForm'>Tambah SK
-                                                                Pengawasan</button>
-                                                            @if ($form)
-                                                                <button class="btn btn-warning"
-                                                                    wire:click='tutupForm'>Batalkan</button>
-                                                            @endif
-                                                        </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="pull-right col-md-12">
+                                                        <button class="btn btn-sm btn-primary"
+                                                            wire:click='tampilkanForm'>Tambah SK
+                                                            Pengawasan</button>
+                                                        @if ($form)
+                                                            <button class="btn btn-sm btn-warning"
+                                                                wire:click='tutupForm'>Batalkan</button>
+                                                        @endif
                                                     </div>
                                                 </div>
+                                            </div>
                                             </h5>
                                         </div>
                                     </div>

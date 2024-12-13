@@ -43,6 +43,11 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-2 mb-2">
+                            <input type="text" class="form-control" placeholder="Search" wire:model.live='cari'>
+                        </div>
+                    </div>
                     <div class="table-responsive">
                         <table id="example" class="table table-striped table-bordered" style="width:100%">
                             <thead>

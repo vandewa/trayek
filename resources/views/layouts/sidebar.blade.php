@@ -6,19 +6,30 @@
                 <div class="menu-title">Dashboard</div>
             </a>
         </li>
-
-        {{-- <li>
-            <a href="{{ route('sk') }}">
-                <div class="parent-icon"><span class="material-symbols-outlined">book</span></div>
-                <div class="menu-title">SK</div>
-            </a>
-        </li> --}}
         <li>
             <a href="{{ route('kendaraan') }}">
-                <div class="parent-icon"><span class="material-symbols-outlined">book</span></div>
+                <div class="parent-icon"><span class="material-symbols-outlined">
+                        local_taxi
+                    </span></div>
                 <div class="menu-title">Kendaraan</div>
             </a>
         </li>
+        <li>
+            <a href="{{ route('master.perusahaan') }}">
+                <div class="parent-icon"><span class="material-symbols-outlined">
+                        corporate_fare
+                    </span></div>
+                <div class="menu-title">Perusahaan</div>
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('master.trayek') }}">
+                <div class="parent-icon"><span class="material-symbols-outlined">route
+                    </span></div>
+                <div class="menu-title">Trayek</div>
+            </a>
+        </li>
+
 
         <li>
             <a href="javascript:;" class="has-arrow">
@@ -27,22 +38,6 @@
                 <div class="menu-title">Master</div>
             </a>
             <ul>
-                <li>
-                    <a href="{{ route('master.perusahaan') }}"><span
-                            class="material-symbols-outlined">arrow_right</span>
-                        Perusahaan
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('master.kendaraan') }}"><span class="material-symbols-outlined">arrow_right</span>
-                        Kendaraan
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('master.trayek') }}"><span class="material-symbols-outlined">arrow_right</span>
-                        Trayek
-                    </a>
-                </li>
                 <li>
                     <a href="{{ route('master.kepala') }}"><span class="material-symbols-outlined">arrow_right</span>
                         Kepala Dinas

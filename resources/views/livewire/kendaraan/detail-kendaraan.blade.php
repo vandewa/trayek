@@ -85,7 +85,7 @@
                     @endif
                     <form class="row g-3" wire:submit='save'>
                         <div class="col-md-12">
-                            <div class="mb-2">
+                            <div class="mb-3">
                                 <label for="input1" class="form-label">SK</label>
                                 <input type="text" class="form-control" wire:model='form.nomor'
                                     placeholder="Nomor Kendaraan">
@@ -128,7 +128,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="input1" class="form-label">Sk Trayek Sebelumnya</label>
+                                        <label for="input1" class="form-label">SK Trayek Sebelumnya</label>
                                         <input type="file" class="form-control"
                                             wire:model='form.sk_trayek_sebelumnya' placeholder="SK trayek">
                                         @error('form.sk_trayek_sebelumnya')
@@ -216,8 +216,9 @@
                                 <td>{{ $item->no_uji_kendaraan }}</td>
                                 <td>
                                     <button wire:click='getEdit({{ $item->id }})'
-                                        class="btn btn-warning">Edit</button>
-                                    <a href="{{ route('detail-sk', $item->id) }}" class="btn btn-primary">Detail</a>
+                                        class="btn btn-sm btn-warning">Edit</button>
+                                    <a href="{{ route('detail-sk', $item->id) }}"
+                                        class="btn btn-sm btn-primary">Detail</a>
                                 </td>
                             </tr>
                         @endforeach
