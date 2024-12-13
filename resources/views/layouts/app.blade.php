@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SIPAWON - Sistem Pelayanan Angkutan Wonosobo</title>
+    <link rel="icon" href="{{ asset('favicon_io/favicon-32x32.png') }}" type="image/png" />
+
 
     <!--plugins-->
     <link href="{{ asset('roksyn/ltr/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet">
