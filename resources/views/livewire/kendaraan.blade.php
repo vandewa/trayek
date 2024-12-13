@@ -8,7 +8,12 @@
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Tambah Kendaraan
+                                    @if ($edit)
+                                        Edit
+                                    @else
+                                        Tambah
+                                    @endif
+                                    Kendaraan
                                 </button>
                             </h2>
                             <div id="collapseTwo"
@@ -19,7 +24,6 @@
                                         <div class="col-md-12">
                                             <div class="card">
                                                 <div class="p-4 card-body">
-                                                    <h5 class="mb-4">Form Kendaraan</h5>
                                                     <form class="row g-3" wire:submit="save">
                                                         <div class="col-md-6">
                                                             <div class="mb-3">
@@ -200,9 +204,7 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <div
-                                                class="gap-3
-                                table-actions d-flex align-items-center fs-6">
+                                            <div class="gap-3 table-actions d-flex align-items-center fs-6">
                                                 <div class="mr-2">
                                                     <a href="{{ route('detail-kendaraan', $item->id) }}"
                                                         class="btn btn-primary btn-sm">
@@ -225,6 +227,8 @@
                             </tbody>
                         </table>
                     </div>
+                    {{ $post->links() }}
+
                 </div>
             </div>
         </div>
