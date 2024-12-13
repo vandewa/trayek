@@ -65,12 +65,10 @@
                                         </td>
                                         <td> {{ $item->nama ?? '-' }}</td>
                                         <td>
-                                            @if ($item->active_st == '1')
-                                                Aktif
-                                            @elseif($item->active_st == '0')
-                                                Non Aktif
+                                            @if ($item->active_st == 1)
+                                                <span class="badge bg-success">Aktif</span>
                                             @else
-                                                -
+                                                <span class="badge bg-dark">Non Aktif</span>
                                             @endif
                                         </td>
                                         <td>

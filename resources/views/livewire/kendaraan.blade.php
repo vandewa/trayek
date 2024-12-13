@@ -200,7 +200,7 @@
                                             @if ($item->kendaraan_st == 1)
                                                 <span class="badge bg-success">Aktif</span>
                                             @else
-                                                <span class="badge bg-danger">Non Aktif</span>
+                                                <span class="badge bg-dark">Non Aktif</span>
                                             @endif
                                         </td>
                                         <td>
