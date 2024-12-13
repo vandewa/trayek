@@ -1,7 +1,7 @@
 <div class="sidebar-nav" data-simplebar="true">
     <ul class="metismenu" id="menu">
         <li>
-            <a href="{{ url('/') }}">
+            <a href="{{ route('dashboard') }}">
                 <div class="parent-icon"><span class="material-symbols-outlined">home</span></div>
                 <div class="menu-title">Dashboard</div>
             </a>

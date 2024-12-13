@@ -48,6 +48,7 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/', Dashboard::class)->name('index');
+    Route::get('/dashboard', Dashboard::class)->name('dashboard');
     // Route::get('/', [DashboardController::class, 'index'])->name('index');
     Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
 
