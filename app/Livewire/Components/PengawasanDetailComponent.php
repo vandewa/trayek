@@ -58,7 +58,7 @@ class PengawasanDetailComponent extends Component
 
         // Path template Word
         $templatePath = storage_path('app/templates/kartu_pengawasan.docx');
-        $outputPath = storage_path("app/public/kartu_pengawasan{$sk->id}.docx");
+        $outputPath = storage_path("app/public/Kartu_Pengawasan{$sk->id}.docx");
 
         // Load template
         $templateProcessor = new TemplateProcessor($templatePath);
@@ -108,7 +108,7 @@ class PengawasanDetailComponent extends Component
 
     public function render()
     {
-        $filePath = 'public/kartu_pengawasan'.$this->skId.'.docx';
+        $filePath = 'public/Kartu_Pengawasan'.$this->skId.'.docx';
         if (Storage::exists($filePath)) {
             $file = true;
         } else {

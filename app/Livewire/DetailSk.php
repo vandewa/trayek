@@ -124,7 +124,7 @@ class DetailSk extends Component
 
     public function render()
     {
-        $filePath = 'public/Surat_keputusan_'.$this->skId.'.docx';
+        $filePath = 'public/Surat_Keputusan_'.$this->skId.'.docx';
         if (Storage::exists($filePath)) {
             $file = true;
         } else {
