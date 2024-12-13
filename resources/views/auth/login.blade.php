@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SIPAWON - Sistem Pelayanan Angkutan Wonosobo</title>
     <link rel="icon" href="{{ asset('favicon_io/favicon-32x32.png') }}" type="image/png" />
+    <meta name="description" content="SIPAWON - Sistem Pelayanan Angkutan Wonosobo">
+    <meta name="author" content="Disperkimhub">
+    <meta name="keyword" content="SIPAWON">
 
     <!--plugins-->
     <link href="{{ asset('roksyn/ltr/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet">
