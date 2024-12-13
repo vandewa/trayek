@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Roksyn - Bootstrap 5 Admin Template</title>
+    <title>SIPAWON - Sistem Pelayanan Angkutan Wonosobo</title>
 
     <!--plugins-->
     <link href="{{ asset('roksyn/ltr/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet">
@@ -33,13 +33,18 @@
             <div class="row g-3">
                 <div class="col-lg-6 d-flex">
                     <div class="card-body p-5 w-100">
-                        <img src="{{ asset('roksyn/ltr/assets/images/logo-icon.png') }}" class="mb-4" width="45"
-                            alt="">
-                        <h4 class="fw-bold">Login</h4>
-                        <p class="mb-0">Enter your credentials to login your account</p>
+                        <div class="d-flex align-items-center mb-5">
+                            <img src="{{ asset('logo.png') }}" width="50" alt="" class="me-3">
+                            <div>
+                                <h4 class="fw-bold mb-0">SIPAWON</h4>
+                                <span class="text-muted">Sistem Pelayanan Angkutan Wonosobo</span>
+                            </div>
+                        </div>
 
+                        <h4 class="fw-bold mb-1">Login</h4>
+                        <p class="mb-4">Enter your credentials to login your account</p>
 
-                        <div class="form-body mt-4">
+                        <div class="form-body">
                             <form action="{{ route('login') }}" method="post" class="row g-3">
                                 @csrf
 
@@ -71,8 +76,8 @@
                                         <label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
                                     </div>
                                 </div>
-                                <div class="col-md-6 text-end"> <a href="auth-boxed-forgot-password.html">Forgot
-                                        Password ?</a>
+                                <div class="col-md-6 text-end">
+                                    <a href="#">Forgot Password ?</a>
                                 </div>
                                 <div class="col-12">
                                     <div class="d-grid">
@@ -90,8 +95,7 @@
                             alt="">
                     </div>
                 </div>
-
-            </div><!--end row-->
+            </div>
         </div>
 
     </div>
