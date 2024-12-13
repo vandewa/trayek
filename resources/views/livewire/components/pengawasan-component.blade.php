@@ -64,7 +64,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="input1" class="form-label">Sk Trayek
+                                <label for="input1" class="form-label">SK Trayek
                                     Sebelumnya</label>
                                 <input type="file" class="form-control" wire:model='form.sk_trayek_sebelumnya'
                                     placeholder="SK trayek">

@@ -223,12 +223,12 @@
                                                                     <td>{{ $item->tanggal_mulai_berlaku }} S/D
                                                                         {{ $item->tanggal_selesai_berlaku }}</td>
                                                                     <td>
-                                                                        <button class="btn btn-sm btn-primary"
+                                                                        <button class="btn btn-sm mb-1 btn-primary"
                                                                             wire:click="$dispatch('detail-sk-refresh', { id: {{ $item->id }} })">Detail</button>
-                                                                        <button class="btn btn-sm btn-warning"
+                                                                        <button class="btn btn-sm mb-1 btn-warning"
                                                                             wire:click='editSkPengawaan({{ $item->id }})'>Edit
                                                                         </button>
-                                                                        <button class="btn btn-sm btn-danger">Hapus
+                                                                        <button class="btn btn-sm mb-1 btn-danger">Hapus
                                                                         </button>
                                                                     </td>
                                                                 </tr>
