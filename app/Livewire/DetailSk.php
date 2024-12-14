@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Livewire\Components\PengawasanComponent;
+use App\Models\Kepala;
 use Livewire\Component;
 use App\Models\Sk;
 use Illuminate\Support\Facades\Storage;
@@ -40,8 +41,9 @@ class DetailSk extends Component
         $this->mobile();
     }
 
-    public function mobile() {
-        $this->mobil =  Kendaraan::with(['perusahaan', 'trayek'])->findOrFail($this->sk->kendaraan_id);
+    public function mobile()
+    {
+        $this->mobil = Kendaraan::with(['perusahaan', 'trayek'])->findOrFail($this->sk->kendaraan_id);
     }
 
     public function exportWord()
@@ -69,6 +71,7 @@ class DetailSk extends Component
         // Load template
         $templateProcessor = new TemplateProcessor($templatePath);
         $penetapan = Carbon::parse(date('Y-m-d'))->translatedFormat('j F Y');
+        $kepalaDinas = Kepala::first();
 
 
         // Isi placeholder dengan data SK
@@ -80,7 +83,7 @@ class DetailSk extends Component
         $templateProcessor->setValue('alamat_badan_hukum', $sk->perusahaan->alamat ?? '-');
         $templateProcessor->setValue('trayek', $sk->trayek->nama ?? '-');
         $templateProcessor->setValue('berlaku', $sk->perusahaan->alamat ?? '-');
-        $templateProcessor->setValue('tanggal_penetapan',  $penetapan  ?? '-');
+        $templateProcessor->setValue('tanggal_penetapan', $penetapan ?? '-');
 
         // Isi tabel kendaraan
         $kendaraan = $sk->kendaraans;
@@ -89,46 +92,55 @@ class DetailSk extends Component
         // $templateProcessor->cloneRow('no_urut', count($kendaraans));
         // foreach ($kendaraans as $index => $kendaraan) {
         //     $rowIndex = $index + 1;
-            $templateProcessor->setValue("no_urut", 1);
-            $templateProcessor->setValue("nomor_induk", $kendaraan->nomor_induk ?? '-');
-            $templateProcessor->setValue("nomor_kendaraan", $kendaraan->nomor_kendaraan ?? '-');
-            $templateProcessor->setValue("nomor_uji", $kendaraan->nomor_uji ?? '-');
-            $templateProcessor->setValue("merk", $kendaraan->merk ?? '-');
-            $templateProcessor->setValue("tahun_pembuatan", $kendaraan->tahun_pembuatan ?? '-');
-            $templateProcessor->setValue("daya_angkut", $kendaraan->daya_angkut ?? '-');
-            $templateProcessor->setValue("sifat_perjalanan", $kendaraan->sifat_perjalanan ?? '-');
-            $templateProcessor->setValue("kode_trayek", $kendaraan->kode_trayek ?? '-');
+        $templateProcessor->setValue("no_urut", 1);
+        $templateProcessor->setValue("nomor_induk", $kendaraan->nomor_induk ?? '-');
+        $templateProcessor->setValue("nomor_kendaraan", $kendaraan->nomor_kendaraan ?? '-');
+        $templateProcessor->setValue("nomor_uji", $kendaraan->nomor_uji ?? '-');
+        $templateProcessor->setValue("merk", $kendaraan->merk ?? '-');
+        $templateProcessor->setValue("tahun_pembuatan", $kendaraan->tahun_pembuatan ?? '-');
+        $templateProcessor->setValue("daya_angkut", $kendaraan->daya_angkut ?? '-');
+        $templateProcessor->setValue("sifat_perjalanan", $kendaraan->sifat_perjalanan ?? '-');
+        $templateProcessor->setValue("kode_trayek", $kendaraan->kode_trayek ?? '-');
         // }
+
+        $templateProcessor->setValue("nama_kepala", $kepalaDinas->nama ?? '-');
+        $templateProcessor->setValue("nip_kepala", $kepalaDinas->nip ?? '-');
+
 
         // Simpan dokumen hasil
         $templateProcessor->saveAs($outputPath);
     }
 
     #[On('detail-sk-refresh')]
-    public function refresh() {
+    public function refresh()
+    {
         $this->tutupForm();
     }
 
-    public function editSkPengawaan($id) {
+    public function editSkPengawaan($id)
+    {
         $this->tampilkanForm();
         $this->dispatch('edit-sk-pengawasan', id: $id)->to(PengawasanComponent::class);
 
     }
 
-    public function tampilkanForm() {
+    public function tampilkanForm()
+    {
         $this->form = true;
     }
-    public function tutupForm() {
+    public function tutupForm()
+    {
         $this->form = false;
     }
 
-    public function tambahSkPengawasan() {
+    public function tambahSkPengawasan()
+    {
 
     }
 
     public function render()
     {
-        $filePath = 'public/Surat_Keputusan_'.$this->skId.'.docx';
+        $filePath = 'public/Surat_Keputusan_' . $this->skId . '.docx';
         if (Storage::exists($filePath)) {
             $file = true;
         } else {

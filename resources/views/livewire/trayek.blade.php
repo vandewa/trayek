@@ -1,43 +1,75 @@
 <div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card">
-                <div class="card-body p-4">
-                    <h5 class="mb-4">Form Trayek</h5>
-                    <form class="row g-3" wire:submit.prevent='save'>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="input1" class="form-label">Nama</label>
-                                <input type="text" class="form-control" wire:model='form.nama'
-                                    placeholder="Masukkan Nama">
-                                @error('form.nama')
-                                    <span class="form-text text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-                            <div class="mb-0">
-                                <label for="input1" class="form-label">Status</label>
-                                <select class="form-control" wire:model.live="form.active_st">
-                                    <option value="">-- Pilih Status --</option>
-                                    <option value="1">Aktif</option>
-                                    <option value="0">Non Aktif</option>
-                                </select>
-                                @error('form.active_st')
-                                    <span class="form-text text-danger">{{ $message }}</span>
-                                @enderror
+            <div class="card radius-10">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                @if ($edit)
+                                    Edit
+                                @else
+                                    Tambah
+                                @endif
+                                Trayek
+                            </button>
+                        </h2>
+                        <div id="collapseTwo"
+                            class="accordion-collapse collapse @if ($edit) show @endif"
+                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="p-4 card-body">
+                                                <form class="row g-3" wire:submit.prevent='save'>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label for="input1" class="form-label">Nama</label>
+                                                            <input type="text" class="form-control"
+                                                                wire:model='form.nama' placeholder="Masukkan Nama">
+                                                            @error('form.nama')
+                                                                <span
+                                                                    class="form-text text-danger">{{ $message }}</span>
+                                                            @enderror
+                                                        </div>
+                                                        <div class="mb-0">
+                                                            <label for="input1" class="form-label">Status</label>
+                                                            <select class="form-control"
+                                                                wire:model.live="form.active_st">
+                                                                <option value="">-- Pilih Status --</option>
+                                                                <option value="1">Aktif</option>
+                                                                <option value="0">Non Aktif</option>
+                                                            </select>
+                                                            @error('form.active_st')
+                                                                <span
+                                                                    class="form-text text-danger">{{ $message }}</span>
+                                                            @enderror
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <div class="d-md-flex d-grid align-items-center gap-3">
+                                                            <button type="submit"
+                                                                class="btn btn-primary px-4">Submit</button>
+                                                            <button type="button" wire:click='batal'
+                                                                class="btn btn-light px-4">Reset</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!--end row-->
                             </div>
                         </div>
 
-                        <div class="col-md-12">
-                            <div class="d-md-flex d-grid align-items-center gap-3">
-                                <button type="submit" class="btn btn-primary px-4">Submit</button>
-                                <button type="button" wire:click='batal' class="btn btn-light px-4">Reset</button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div><!--end row-->
+    </div>
 
     <div class="row">
         <div class="col-md-12">

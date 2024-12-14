@@ -4,7 +4,9 @@ namespace App\Livewire;
 
 use App\Models\Kendaraan;
 use App\Models\Pemeliharaan;
+use App\Models\Perusahaan;
 use App\Models\Trayek;
+use App\Models\User;
 use Livewire\Component;
 
 class Dashboard extends Component
@@ -45,9 +47,29 @@ class Dashboard extends Component
             ])
             ->get();
 
+        $totalKendaraan = Kendaraan::where('kendaraan_st', 1)->count();
+        $totalPerusahaan = Perusahaan::where('active_st', 1)->count();
+        $totalTrayek = Trayek::where('active_st', 1)->count();
+        $totalUser = User::count();
+
+        $kendaraanNonAktif = Kendaraan::where('kendaraan_st', '!=', 1)->count();
+        $perusahaanNonAktif = Perusahaan::where('active_st', '!=', 1)->count();
+        $trayekNonAktif = Trayek::where('active_st', '!=', 1)->count();
+
+        $presentaseKendaraan = (($totalKendaraan - $kendaraanNonAktif) / Kendaraan::count()) * 100;
+        $presentaseTrayek = (($totalTrayek - $trayekNonAktif) / Trayek::count()) * 100;
+        $presentasePerusahaan = (($totalPerusahaan - $perusahaanNonAktif) / Perusahaan::count()) * 100;
+
 
         return view('livewire.dashboard', [
-            'data' => $data
+            'data' => $data,
+            'totalKendaraan' => $totalKendaraan,
+            'totalPerusahaan' => $totalPerusahaan,
+            'totalTrayek' => $totalTrayek,
+            'totalUser' => $totalUser,
+            'presentaseKendaraan' => $presentaseKendaraan,
+            'presentaseTrayek' => $presentaseTrayek,
+            'presentasePerusahaan' => $presentasePerusahaan,
         ]);
     }
 }

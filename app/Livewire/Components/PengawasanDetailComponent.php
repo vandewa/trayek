@@ -2,13 +2,14 @@
 
 namespace App\Livewire\Components;
 
+use App\Models\Sk;
+use Carbon\Carbon;
+use App\Models\Kepala;
 use Livewire\Component;
 use Livewire\Attributes\On;
 use App\Models\SkPengawasan;
 use Illuminate\Support\Facades\Storage;
 use PhpOffice\PhpWord\TemplateProcessor;
-use App\Models\Sk;
-use Carbon\Carbon;
 
 
 class PengawasanDetailComponent extends Component
@@ -18,19 +19,23 @@ class PengawasanDetailComponent extends Component
     public $sk;
     public $skId;
 
-    public function openModal() {
+    public function openModal()
+    {
         $this->modal = true;
     }
-    public function closeMOdal() {
+    public function closeMOdal()
+    {
         $this->modal = false;
     }
-    public function toogleModal() {
+    public function toogleModal()
+    {
         $this->modal = !$this->modal;
     }
 
     #[On('detail-sk-refresh')]
-    public function detailData($id) {
-        $this->sk=SkPengawasan::find($id);
+    public function detailData($id)
+    {
+        $this->sk = SkPengawasan::find($id);
         $this->skId = $id;
         $this->openModal();
     }
@@ -45,9 +50,11 @@ class PengawasanDetailComponent extends Component
         }
 
         // Ambil data SK
-        $sk = SkPengawasan::with(['sk' => function($r) {
-            $r->with(['perusahaan', 'trayek', 'kendaraans']);
-        }])->find($this->skId);
+        $sk = SkPengawasan::with([
+            'sk' => function ($r) {
+                $r->with(['perusahaan', 'trayek', 'kendaraans']);
+            }
+        ])->find($this->skId);
 
 
 
@@ -64,7 +71,8 @@ class PengawasanDetailComponent extends Component
         $templateProcessor = new TemplateProcessor($templatePath);
 
         $tangal_mulai = Carbon::parse($sk->tanggal_mulai_berlaku)->translatedFormat('j F Y');
-        $tangal_selesai = Carbon::parse($sk->tanggal_selesai_berlaku )->translatedFormat('j F Y');
+        $tangal_selesai = Carbon::parse($sk->tanggal_selesai_berlaku)->translatedFormat('j F Y');
+        $kepalaDinas = Kepala::first();
 
 
 
@@ -77,8 +85,8 @@ class PengawasanDetailComponent extends Component
         $templateProcessor->setValue('alamat_badan_hukum', $sk->perusahaan->alamat ?? '-');
         $templateProcessor->setValue('trayek', $sk->trayek->nama ?? '-');
         $templateProcessor->setValue('berlaku', $sk->perusahaan->alamat ?? '-');
-        $templateProcessor->setValue("berlaku_mulai", $tangal_mulai?? '-');
-        $templateProcessor->setValue("berlaku_sampai",  $tangal_selesai ?? '-');
+        $templateProcessor->setValue("berlaku_mulai", $tangal_mulai ?? '-');
+        $templateProcessor->setValue("berlaku_sampai", $tangal_selesai ?? '-');
 
 
         // Isi tabel kendaraan
@@ -90,17 +98,20 @@ class PengawasanDetailComponent extends Component
         // foreach ($kendaraans as $index => $kendaraan) {
         //     $rowIndex = $index + 1;
 
-            $templateProcessor->setValue("no_urut", 1);
-            $templateProcessor->setValue("nomor_induk", $kendaraan->nomor_induk ?? '-');
-            $templateProcessor->setValue("nomor_kendaraan", $kendaraan->no_kendaraan ?? '-');
-            $templateProcessor->setValue("nomor_uji", $sk->no_uji_kendaraan ?? '-');
-            $templateProcessor->setValue("merk", $kendaraan->merk ?? '-');
-            $templateProcessor->setValue("tahun_pembuatan", $kendaraan->tahun_pembuatan ?? '-');
-            $templateProcessor->setValue("daya_angkut", $kendaraan->daya_angkut ?? '-');
-            $templateProcessor->setValue("sifat_perjalanan", $kendaraan->sifat_perjalanan ?? '-');
-            $templateProcessor->setValue("kode_trayek", $kendaraan->kode_trayek ?? '-');
+        $templateProcessor->setValue("no_urut", 1);
+        $templateProcessor->setValue("nomor_induk", $kendaraan->nomor_induk ?? '-');
+        $templateProcessor->setValue("nomor_kendaraan", $kendaraan->no_kendaraan ?? '-');
+        $templateProcessor->setValue("nomor_uji", $sk->no_uji_kendaraan ?? '-');
+        $templateProcessor->setValue("merk", $kendaraan->merk ?? '-');
+        $templateProcessor->setValue("tahun_pembuatan", $kendaraan->tahun_pembuatan ?? '-');
+        $templateProcessor->setValue("daya_angkut", $kendaraan->daya_angkut ?? '-');
+        $templateProcessor->setValue("sifat_perjalanan", $kendaraan->sifat_perjalanan ?? '-');
+        $templateProcessor->setValue("kode_trayek", $kendaraan->kode_trayek ?? '-');
 
         // }
+
+        $templateProcessor->setValue("nama_kepala", $kepalaDinas->nama ?? '-');
+        $templateProcessor->setValue("nip_kepala", $kepalaDinas->nip ?? '-');
 
         // Simpan dokumen hasil
         $templateProcessor->saveAs($outputPath);
@@ -108,7 +119,7 @@ class PengawasanDetailComponent extends Component
 
     public function render()
     {
-        $filePath = 'public/Kartu_Pengawasan'.$this->skId.'.docx';
+        $filePath = 'public/Kartu_Pengawasan' . $this->skId . '.docx';
         if (Storage::exists($filePath)) {
             $file = true;
         } else {
