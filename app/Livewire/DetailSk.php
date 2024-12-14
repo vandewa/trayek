@@ -11,6 +11,7 @@ use App\Models\SkPengawasan;
 use PhpOffice\PhpWord\TemplateProcessor;
 use Livewire\WithPagination;
 use Livewire\Attributes\On;
+use Carbon\Carbon;
 
 class DetailSk extends Component
 {
@@ -67,6 +68,8 @@ class DetailSk extends Component
 
         // Load template
         $templateProcessor = new TemplateProcessor($templatePath);
+        $penetapan = Carbon::parse(date('Y-m-d'))->translatedFormat('j F Y');
+
 
         // Isi placeholder dengan data SK
         $templateProcessor->setValue('nomor_sk', $sk->nomor ?? '-');
@@ -77,6 +80,7 @@ class DetailSk extends Component
         $templateProcessor->setValue('alamat_badan_hukum', $sk->perusahaan->alamat ?? '-');
         $templateProcessor->setValue('trayek', $sk->trayek->nama ?? '-');
         $templateProcessor->setValue('berlaku', $sk->perusahaan->alamat ?? '-');
+        $templateProcessor->setValue('tanggal_penetapan',  $penetapan  ?? '-');
 
         // Isi tabel kendaraan
         $kendaraan = $sk->kendaraans;
@@ -124,7 +128,7 @@ class DetailSk extends Component
 
     public function render()
     {
-        $filePath = 'public/Surat_keputusan_'.$this->skId.'.docx';
+        $filePath = 'public/Surat_Keputusan_'.$this->skId.'.docx';
         if (Storage::exists($filePath)) {
             $file = true;
         } else {
