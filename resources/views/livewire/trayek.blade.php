@@ -90,6 +90,7 @@
                             </tbody>
                         </table>
                     </div>
+                    {{ $post->links() }}
                 </div>
             </div>
         </div>
