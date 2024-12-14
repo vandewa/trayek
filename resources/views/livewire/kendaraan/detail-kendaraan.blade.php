@@ -76,7 +76,7 @@
         <div class="col-12 col-lg-8 d-flex">
             <div class="card w-100">
                 <div class="card-body">
-                    <h5 class="mb-3 text-center fw-bold">Form Pembuatan SK (Surat Keterangan)</h5>
+                    <h5 class="mb-3 text-center fw-bold">Form Pembuatan SK (Surat Keputusan)</h5>
 
                     @if (session('status'))
                         <div class="alert alert-success">
@@ -195,7 +195,7 @@
     <div class="row">
         <div class="card">
             <div class="card-body">
-                <h6 class="mb-2">History SK (Surat Keterangan)</h6>
+                <h6 class="mb-2">History SK (Surat Keputusan)</h6>
                 <div class="my-3 border-top"></div>
                 <table class="table">
                     <thead>
