@@ -88,7 +88,7 @@
                             <div class="mb-3">
                                 <label for="input1" class="form-label">SK</label>
                                 <input type="text" class="form-control" wire:model='form.nomor'
-                                    placeholder="Nomor Kendaraan">
+                                    placeholder="Nomor SK">
                                 @error('form.nomor')
                                     <span class="form-text text-danger">{{ $message }}</span>
                                 @enderror
@@ -120,7 +120,7 @@
                             <div class="mb-3">
                                 <label for="input1" class="form-label">Nomor Uji Kendaraan</label>
                                 <input type="text" class="form-control" wire:model='form.no_uji_kendaraan'
-                                    placeholder="Nomor Kendaraan">
+                                    placeholder="KIR Kendaraan">
                                 @error('form.no_uji_kendaraan')
                                     <span class="form-text text-danger">{{ $message }}</span>
                                 @enderror
