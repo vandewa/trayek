@@ -34,7 +34,7 @@
                                                         <div class="card-body">
                                                             <div class="table-responsive">
                                                                 <table class="table">
-                                                                    <thead>
+                                                                    <thead class="table-light">
                                                                         <th>No</th>
                                                                         <th>Name</th>
                                                                         <th>Display Name</th>

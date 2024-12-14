@@ -104,7 +104,7 @@
 
                     <div class="table-responsive">
                         <table class="table">
-                            <thead>
+                            <thead class="table-light">
                                 <th>Trayek</th>
                                 <th>Surat Keputusan (SK)</th>
                                 <th>Kartu Pengawasan</th>

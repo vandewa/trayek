@@ -180,7 +180,7 @@
                                         wire:model.live='cari'>
                                 </div>
                             </div>
-                            <thead>
+                            <thead class="table-light">
                                 <tr>
                                     <th>No</th>
                                     <th>No. Kendaraan</th>

@@ -132,7 +132,7 @@
 
                     <div class="table-responsive">
                         <table id="example" class="table table-striped table-bordered" style="width:100%">
-                            <thead>
+                            <thead class="table-light">
                                 <tr>
                                     <th>No</th>
                                     <th>Nama</th>
