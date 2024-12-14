@@ -107,7 +107,7 @@
                             <thead>
                                 <th>Trayek</th>
                                 <th>Surat Keputusan (SK)</th>
-                                <th>Pengawasan</th>
+                                <th>Kartu Pengawasan</th>
                             </thead>
                             <tbody>
                                 @foreach ($data as $list)
