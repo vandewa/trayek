@@ -66,12 +66,14 @@ class PengawasanDetailComponent extends Component
         // Path template Word
         $templatePath = storage_path('app/templates/kartu_pengawasan.docx');
         $outputPath = storage_path("app/public/Kartu_Pengawasan{$sk->id}.docx");
+        $penetapan = Carbon::parse(date('Y-m-d'))->translatedFormat('j F Y');
 
         // Load template
         $templateProcessor = new TemplateProcessor($templatePath);
 
         $tangal_mulai = Carbon::parse($sk->tanggal_mulai_berlaku)->translatedFormat('j F Y');
         $tangal_selesai = Carbon::parse($sk->tanggal_selesai_berlaku)->translatedFormat('j F Y');
+        $tanggal_trayek = Carbon::parse($sk->sk->tanggal_sk)->translatedFormat('j F Y');
         $kepalaDinas = Kepala::first();
 
 
@@ -79,14 +81,17 @@ class PengawasanDetailComponent extends Component
         // Isi placeholder dengan data SK
         $templateProcessor->setValue('nomor_sk', $sk->nomor ?? '-');
         $templateProcessor->setValue('masa_berlaku', $sk->masa_berlaku ?? '-');
-        $templateProcessor->setValue('trayek', $sk->trayek->nama ?? '-');
-        $templateProcessor->setValue('nama_badan_hukum', $sk->perusahaan->nama ?? '-');
-        $templateProcessor->setValue('nama_pimpinan', $sk->perusahaan->pemimpin ?? '-');
-        $templateProcessor->setValue('alamat_badan_hukum', $sk->perusahaan->alamat ?? '-');
-        $templateProcessor->setValue('trayek', $sk->trayek->nama ?? '-');
+        $templateProcessor->setValue('trayek', $sk->sk->trayek->nama ?? '-');
+        $templateProcessor->setValue('nama_badan_hukum', $sk->sk->perusahaan->nama ?? '-');
+        $templateProcessor->setValue('nama_pimpinan', $sk->sk->perusahaan->pemimpin ?? '-');
+        $templateProcessor->setValue('alamat_badan_hukum', $sk->sk->perusahaan->alamat ?? '-');
+        $templateProcessor->setValue('trayek', $sk->sk->trayek->nama ?? '-');
         $templateProcessor->setValue('berlaku', $sk->perusahaan->alamat ?? '-');
         $templateProcessor->setValue("berlaku_mulai", $tangal_mulai ?? '-');
         $templateProcessor->setValue("berlaku_sampai", $tangal_selesai ?? '-');
+        $templateProcessor->setValue("sk_trayek", $sk->sk->nomor ?? '-');
+        $templateProcessor->setValue("tanggal_trayek", $tanggal_trayek ?? '-');
+        $templateProcessor->setValue('tanggal_penetapan', $penetapan ?? '-');
 
 
         // Isi tabel kendaraan
@@ -107,6 +112,8 @@ class PengawasanDetailComponent extends Component
         $templateProcessor->setValue("daya_angkut", $kendaraan->daya_angkut ?? '-');
         $templateProcessor->setValue("sifat_perjalanan", $kendaraan->sifat_perjalanan ?? '-');
         $templateProcessor->setValue("kode_trayek", $kendaraan->kode_trayek ?? '-');
+        $templateProcessor->setValue("kelas", 'Ekonomi');
+        $templateProcessor->setValue("kode_perusahaan", $sk->sk->perusahaan->id??"-");
 
         // }
 
