@@ -47,13 +47,11 @@
             <div class="btn-toggle-menu">
                 <span class="material-symbols-outlined">menu</span>
             </div>
+            <span>
+                Dinas Perumahan Kawasan Permukiman Dan Perhubungan Kabupaten Wonosobo
+            </span>
             <ul class="navbar-nav top-right-menu gap-2">
                 <ul class="gap-2 navbar-nav top-right-menu">
-                    <li class="nav-item d-lg-none d-block" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <a class="nav-link" href="javascript:;"><span class="material-symbols-outlined">
-                                search
-                            </span></a>
-                    </li>
                     <li class="nav-item dark-mode">
                         <a class="nav-link dark-mode-icon" href="javascript:;"><span
                                 class="material-symbols-outlined">dark_mode</span></a>
@@ -89,8 +87,10 @@
             <div class="logo-icon">
                 <img src="assets/images/logo-icon.png" class="logo-img" alt="">
             </div>
-            <div class="logo-name flex-grow-1">
-                <h5 class="mb-0">SIPAWON</h5>
+            <div class="logo-name d-flex align-items-center">
+                <img src="{{ asset('logo.png') }}" alt="Logo 1" height="30" class="me-1">
+                <img src="{{ asset('dishub.png') }}" alt="Logo 2" height="30" class="me-2">
+                <h5 class="">SIPAWON</h5>
             </div>
             <div class="sidebar-close ">
                 <span class="material-symbols-outlined">close</span>
@@ -137,129 +137,6 @@
     <!--start overlay-->
     <div class="overlay btn-toggle-menu"></div>
     <!--end overlay-->
-
-    <!-- Search Modal -->
-    <div class="modal" id="exampleModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="gap-2 modal-header">
-                    <div class="position-relative popup-search w-100">
-                        <input class="border form-control form-control-lg ps-5 border-3 border-primary" type="search"
-                            placeholder="Search">
-                        <span
-                            class="material-symbols-outlined position-absolute ms-3 translate-middle-y start-0 top-50">search</span>
-                    </div>
-                    <button type="button" class="btn-close d-xl-none" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="search-list">
-                        <p class="mb-1">Html Templates</p>
-                        <div class="list-group">
-                            <a href="javascript:;"
-                                class="gap-2 list-group-item list-group-item-action active align-items-center d-flex"><i
-                                    class="bi bi-filetype-html fs-5"></i>Best Html Templates</a>
-                            <a href="javascript:;"
-                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
-                                    class="bi bi-award fs-5"></i>Html5 Templates</a>
-                            <a href="javascript:;"
-                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
-                                    class="bi bi-box2-heart fs-5"></i>Responsive Html5 Templates</a>
-                            <a href="javascript:;"
-                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
-                                    class="bi bi-camera-video fs-5"></i>eCommerce Html Templates</a>
-                        </div>
-                        <p class="mt-3 mb-1">Web Designe Company</p>
-                        <div class="list-group">
-                            <a href="javascript:;"
-                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
-                                    class="bi bi-chat-right-text fs-5"></i>Best Html Templates</a>
-                            <a href="javascript:;"
-                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
-                                    class="bi bi-cloud-arrow-down fs-5"></i>Html5 Templates</a>
-                            <a href="javascript:;"
-                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
-                                    class="bi bi-columns-gap fs-5"></i>Responsive Html5 Templates</a>
-                            <a href="javascript:;"
-                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
-                                    class="bi bi-collection-play fs-5"></i>eCommerce Html Templates</a>
-                        </div>
-                        <p class="mt-3 mb-1">Software Development</p>
-                        <div class="list-group">
-                            <a href="javascript:;"
-                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
-                                    class="bi bi-cup-hot fs-5"></i>Best Html Templates</a>
-                            <a href="javascript:;"
-                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
-                                    class="bi bi-droplet fs-5"></i>Html5 Templates</a>
-                            <a href="javascript:;"
-                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
-                                    class="bi bi-exclamation-triangle fs-5"></i>Responsive Html5 Templates</a>
-                            <a href="javascript:;"
-                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
-                                    class="bi bi-eye fs-5"></i>eCommerce Html Templates</a>
-                        </div>
-                        <p class="mt-3 mb-1">Online Shoping Portals</p>
-                        <div class="list-group">
-                            <a href="javascript:;"
-                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
-                                    class="bi bi-facebook fs-5"></i>Best Html Templates</a>
-                            <a href="javascript:;"
-                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
-                                    class="bi bi-flower2 fs-5"></i>Html5 Templates</a>
-                            <a href="javascript:;"
-                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
-                                    class="bi bi-geo-alt fs-5"></i>Responsive Html5 Templates</a>
-                            <a href="javascript:;"
-                                class="gap-2 list-group-item list-group-item-action align-items-center d-flex"><i
-                                    class="bi bi-github fs-5"></i>eCommerce Html Templates</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--start theme customization-->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="ThemeCustomizer" aria-labelledby="ThemeCustomizerLable">
-        <div class="offcanvas-header border-bottom">
-            <h5 class="offcanvas-title" id="ThemeCustomizerLable">Theme Customizer</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <h6 class="mb-0">Theme Variation</h6>
-            <hr>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="LightTheme"
-                    value="option1">
-                <label class="form-check-label" for="LightTheme">Light</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="DarkTheme"
-                    value="option2" checked="">
-                <label class="form-check-label" for="DarkTheme">Dark</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="SemiDarkTheme"
-                    value="option3">
-                <label class="form-check-label" for="SemiDarkTheme">Semi Dark</label>
-            </div>
-            <hr>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="MinimalTheme"
-                    value="option3">
-                <label class="form-check-label" for="MinimalTheme">Minimal Theme</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="ShadowTheme"
-                    value="option4">
-                <label class="form-check-label" for="ShadowTheme">Shadow Theme</label>
-            </div>
-
-        </div>
-    </div>
-    <!--end theme customization-->
-
 
     <!--plugins-->
     <script src="{{ asset('roksyn/ltr/assets/js/jquery.min.js') }}"></script>

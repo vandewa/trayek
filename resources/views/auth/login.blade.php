@@ -38,7 +38,8 @@
                 <div class="col-lg-6 d-flex">
                     <div class="card-body p-5 w-100">
                         <div class="d-flex align-items-center mb-5">
-                            <img src="{{ asset('logo.png') }}" width="50" alt="" class="me-3">
+                            <img src="{{ asset('logo.png') }}" width="50" alt="" class="me-1">
+                            <img src="{{ asset('dishub.png') }}" width="50" alt="" class="me-3">
                             <div>
                                 <h4 class="fw-bold mb-0">SIPAWON</h4>
                                 <span class="text-muted">Sistem Pelayanan Angkutan Wonosobo</span>
