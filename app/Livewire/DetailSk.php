@@ -71,6 +71,7 @@ class DetailSk extends Component
         // Load template
         $templateProcessor = new TemplateProcessor($templatePath);
         $penetapan = Carbon::parse(date('Y-m-d'))->translatedFormat('j F Y');
+        $tangal_selesai = Carbon::parse($sk->tanggal_selesai_berlaku)->translatedFormat('j F Y');
         $kepalaDinas = Kepala::first();
 
 
@@ -84,9 +85,13 @@ class DetailSk extends Component
         $templateProcessor->setValue('trayek', $sk->trayek->nama ?? '-');
         $templateProcessor->setValue('berlaku', $sk->perusahaan->alamat ?? '-');
         $templateProcessor->setValue('tanggal_penetapan', $penetapan ?? '-');
+        $templateProcessor->setValue("berlaku_sampai", $tangal_selesai ?? '-');
+        $templateProcessor->setValue("kelas", 'Ekonomi');
 
         // Isi tabel kendaraan
         $kendaraan = $sk->kendaraans;
+
+        // dd($kendaraan);
         // array_push($kendaraans , $sk->kendaraans);
         // dd($kendaraans);
         // $templateProcessor->cloneRow('no_urut', count($kendaraans));
@@ -94,13 +99,13 @@ class DetailSk extends Component
         //     $rowIndex = $index + 1;
         $templateProcessor->setValue("no_urut", 1);
         $templateProcessor->setValue("nomor_induk", $kendaraan->nomor_induk ?? '-');
-        $templateProcessor->setValue("nomor_kendaraan", $kendaraan->nomor_kendaraan ?? '-');
-        $templateProcessor->setValue("nomor_uji", $kendaraan->nomor_uji ?? '-');
+        $templateProcessor->setValue("nomor_kendaraan", $kendaraan->no_kendaraan ?? '-');
+        $templateProcessor->setValue("nomor_uji", $kendaraan->no_uji_kendaraan ?? '-');
         $templateProcessor->setValue("merk", $kendaraan->merk ?? '-');
         $templateProcessor->setValue("tahun_pembuatan", $kendaraan->tahun_pembuatan ?? '-');
         $templateProcessor->setValue("daya_angkut", $kendaraan->daya_angkut ?? '-');
         $templateProcessor->setValue("sifat_perjalanan", $kendaraan->sifat_perjalanan ?? '-');
-        $templateProcessor->setValue("kode_trayek", $kendaraan->kode_trayek ?? '-');
+        $templateProcessor->setValue("kode_trayek", $kendaraan->trayek_id ?? '-');
         // }
 
         $templateProcessor->setValue("nama_kepala", $kepalaDinas->nama ?? '-');
