@@ -61,18 +61,18 @@ class SkPengawasan extends Component
         $this->js(<<<'JS'
         Swal.fire({
             title: 'Apakah Anda yakin?',
-                text: "Apakah kamu ingin menghapus data ini? proses ini tidak dapat dikembalikan.",
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Hapus!',
-                cancelButtonText: 'Batal'
-          }).then((result) => {
+            text: "Apakah kamu ingin menghapus data ini? proses ini tidak dapat dikembalikan.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
             if (result.isConfirmed) {
                 $wire.hapus()
             }
-          })
+        })
         JS);
     }
 

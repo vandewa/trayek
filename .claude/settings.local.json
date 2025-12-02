@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "Bash(git -C \"C:\\laragon\\www\\trayek\" log --oneline)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

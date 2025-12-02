@@ -52,15 +52,6 @@
                         </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="input1" class="form-label">Nomor Uji
-                            Kendaraan</label>
-                        <input type="text" class="form-control" wire:model='form.no_uji_kendaraan'
-                            placeholder="Nomor Kendaraan">
-                        @error('form.no_uji_kendaraan')
-                            <span class="form-text text-danger">{{ $message }}</span>
-                        @enderror
-                    </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">

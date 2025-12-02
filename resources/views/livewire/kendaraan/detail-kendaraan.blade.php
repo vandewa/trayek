@@ -117,14 +117,6 @@
                                     <span class="form-text text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="mb-3">
-                                <label for="input1" class="form-label">Nomor Uji Kendaraan</label>
-                                <input type="text" class="form-control" wire:model='form.no_uji_kendaraan'
-                                    placeholder="KIR Kendaraan">
-                                @error('form.no_uji_kendaraan')
-                                    <span class="form-text text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
@@ -219,6 +211,8 @@
                                         class="btn btn-sm btn-warning">Edit</button>
                                     <a href="{{ route('detail-sk', $item->id) }}"
                                         class="btn btn-sm btn-primary">Detail</a>
+                                    <button wire:click='deleteSk({{ $item->id }})'
+                                        class="btn btn-sm btn-danger">Hapus</button>
                                 </td>
                             </tr>
                         @endforeach

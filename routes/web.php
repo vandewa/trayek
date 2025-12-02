@@ -18,6 +18,8 @@ use App\Http\Controllers\HelperController;
 use App\Http\Controllers\DashboardController;
 use App\Livewire\DetailSk;
 use App\Livewire\ExportSkWord;
+use App\Livewire\PreviewSk;
+use App\Livewire\PreviewKp;
 use App\Livewire\Kendaraan\DetailKendaraan;
 use App\Livewire\KepalaDinas;
 
@@ -57,11 +59,13 @@ Route::middleware([
     Route::get('sk', Sk::class)->name('sk');
     Route::get('detail-sk/{id}', DetailSk::class)->name('detail-sk');
     Route::get('/export-sk-word/{id}', ExportSkWord::class)->name('export.sk.word');
+    Route::get('/preview-sk/{id}', PreviewSk::class)->name('preview-sk');
+    Route::get('/preview-kp/{id}', PreviewKp::class)->name('preview-kp');
     Route::get('/detail-kendaraan/{id}', DetailKendaraan::class)->name('detail-kendaraan');
     Route::get('kendaraan-perusahaan', Kendaraan::class)->name('kendaraan');
 
 
-    Route::group(['prefix' => 'master', 'as' => 'master.'], function () {
+    Route::group(['prefix' => 'master', 'as' => 'master.', 'middleware' => ['role:superadmin|admin']], function () {
         Route::get('user-index', UserIndex::class)->name('user-index');
         Route::get('user/{id?}', User::class)->name('user');
         Route::get('list-role', ListRole::class)->name('list-role');

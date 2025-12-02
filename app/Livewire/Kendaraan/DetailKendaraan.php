@@ -190,6 +190,41 @@ class DetailKendaraan extends Component
 
         }
     }
+    public $idHapus;
+
+    public function deleteSk($id)
+    {
+        $this->idHapus = $id;
+        $this->js(<<<'JS'
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: "Data SK dan SK Pengawasan terkait akan ikut terhapus. Proses ini tidak dapat dikembalikan.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $wire.hapusSk()
+            }
+        })
+        JS);
+    }
+
+    public function hapusSk()
+    {
+        Sk::destroy($this->idHapus);
+        $this->js(<<<'JS'
+        Swal.fire({
+            title: 'Berhasil!',
+            text: 'Data SK berhasil dihapus.',
+            icon: 'success',
+        })
+        JS);
+    }
+
     public function render()
     {
         $data = Sk::with(['perusahaan', 'trayek', 'kendaraans'])

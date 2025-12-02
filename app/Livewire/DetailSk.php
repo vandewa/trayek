@@ -50,17 +50,27 @@ class DetailSk extends Component
     {
         // Validasi input
         if (!$this->skId) {
-            session()->flash('error', 'ID SK tidak ditemukan.');
+            $this->js(<<<'JS'
+            Swal.fire({
+                title: 'Error!',
+                text: 'ID SK tidak ditemukan.',
+                icon: 'error',
+            })
+            JS);
             return;
         }
 
         // Ambil data SK
-        $sk = Sk::with(['perusahaan', 'trayek', 'kendaraans'])->find($this->skId);
-
-
+        $sk = Sk::with(['perusahaan', 'trayek', 'kendaraans.trayek'])->find($this->skId);
 
         if (!$sk) {
-            session()->flash('error', 'Data SK tidak ditemukan.');
+            $this->js(<<<'JS'
+            Swal.fire({
+                title: 'Error!',
+                text: 'Data SK tidak ditemukan.',
+                icon: 'error',
+            })
+            JS);
             return;
         }
 
@@ -68,12 +78,23 @@ class DetailSk extends Component
         $templatePath = storage_path('app/templates/Surat_Keputusan_Template.docx');
         $outputPath = storage_path("app/public/Surat_Keputusan_{$sk->id}.docx");
 
+        // Cek apakah template ada
+        if (!file_exists($templatePath)) {
+            $this->js(<<<'JS'
+            Swal.fire({
+                title: 'Error!',
+                text: 'Template SK tidak ditemukan.',
+                icon: 'error',
+            })
+            JS);
+            return;
+        }
+
         // Load template
         $templateProcessor = new TemplateProcessor($templatePath);
         $penetapan = Carbon::parse(date('Y-m-d'))->translatedFormat('j F Y');
-        $tangal_selesai = Carbon::parse($sk->tanggal_selesai_berlaku)->translatedFormat('j F Y');
+        $tangal_selesai = $sk->tanggal_selesai_berlaku ? Carbon::parse($sk->tanggal_selesai_berlaku)->translatedFormat('j F Y') : '-';
         $kepalaDinas = Kepala::first();
-
 
         // Isi placeholder dengan data SK
         $templateProcessor->setValue('nomor_sk', $sk->nomor ?? '-');
@@ -82,38 +103,38 @@ class DetailSk extends Component
         $templateProcessor->setValue('nama_badan_hukum', $sk->perusahaan->nama ?? '-');
         $templateProcessor->setValue('nama_pimpinan', $sk->perusahaan->pemimpin ?? '-');
         $templateProcessor->setValue('alamat_badan_hukum', $sk->perusahaan->alamat ?? '-');
-        $templateProcessor->setValue('trayek', $sk->trayek->nama ?? '-');
         $templateProcessor->setValue('berlaku', $sk->perusahaan->alamat ?? '-');
-        $templateProcessor->setValue('tanggal_penetapan', $penetapan ?? '-');
-        $templateProcessor->setValue("berlaku_sampai", $tangal_selesai ?? '-');
+        $templateProcessor->setValue('tanggal_penetapan', $penetapan);
+        $templateProcessor->setValue("berlaku_sampai", $tangal_selesai);
         $templateProcessor->setValue("kelas", 'Ekonomi');
 
         // Isi tabel kendaraan
         $kendaraan = $sk->kendaraans;
 
-        // dd($kendaraan);
-        // array_push($kendaraans , $sk->kendaraans);
-        // dd($kendaraans);
-        // $templateProcessor->cloneRow('no_urut', count($kendaraans));
-        // foreach ($kendaraans as $index => $kendaraan) {
-        //     $rowIndex = $index + 1;
         $templateProcessor->setValue("no_urut", 1);
         $templateProcessor->setValue("nomor_induk", $kendaraan->nomor_induk ?? '-');
         $templateProcessor->setValue("nomor_kendaraan", $kendaraan->no_kendaraan ?? '-');
         $templateProcessor->setValue("nomor_uji", $kendaraan->no_uji_kendaraan ?? '-');
-        $templateProcessor->setValue("merk", $kendaraan->merk ?? '-');
+        $templateProcessor->setValue("merk", $kendaraan->merek ?? '-');
         $templateProcessor->setValue("tahun_pembuatan", $kendaraan->tahun_pembuatan ?? '-');
         $templateProcessor->setValue("daya_angkut", $kendaraan->daya_angkut ?? '-');
         $templateProcessor->setValue("sifat_perjalanan", $kendaraan->sifat_perjalanan ?? '-');
-        $templateProcessor->setValue("kode_trayek", $kendaraan->trayek_id ?? '-');
-        // }
+        $templateProcessor->setValue("kode_trayek", $sk->trayek->nama ?? '-');
 
         $templateProcessor->setValue("nama_kepala", $kepalaDinas->nama ?? '-');
         $templateProcessor->setValue("nip_kepala", $kepalaDinas->nip ?? '-');
 
-
         // Simpan dokumen hasil
         $templateProcessor->saveAs($outputPath);
+
+        // Notifikasi sukses
+        $this->js(<<<'JS'
+        Swal.fire({
+            title: 'Berhasil!',
+            text: 'Dokumen SK berhasil di-generate.',
+            icon: 'success',
+        })
+        JS);
     }
 
     #[On('detail-sk-refresh')]
@@ -141,6 +162,41 @@ class DetailSk extends Component
     public function tambahSkPengawasan()
     {
 
+    }
+
+    public $idHapus;
+
+    public function deleteKp($id)
+    {
+        $this->idHapus = $id;
+        $this->js(<<<'JS'
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: "Apakah kamu ingin menghapus data ini? Proses ini tidak dapat dikembalikan.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $wire.hapusKp()
+            }
+        })
+        JS);
+    }
+
+    public function hapusKp()
+    {
+        SkPengawasan::destroy($this->idHapus);
+        $this->js(<<<'JS'
+        Swal.fire({
+            title: 'Berhasil!',
+            text: 'Data berhasil dihapus.',
+            icon: 'success',
+        })
+        JS);
     }
 
     public function render()

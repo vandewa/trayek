@@ -67,13 +67,15 @@
 
                                                 </div>
                                             </div>
-                                            <div class="mt-4 d-flex">
+                                            <div class="mt-4 d-flex flex-wrap gap-2">
+                                                <a href="{{ route('preview-sk', $sk->id) }}"
+                                                    class="btn btn-sm btn-info">Preview SK</a>
                                                 <button wire:click='exportWord'
-                                                    class="btn btn-sm btn-primary me-2">Generate
+                                                    class="btn btn-sm btn-primary">Generate
                                                     SK</button>
                                                 @if ($cek_file)
                                                     <a href="{{ route('helper.show-picture', ['path' => $path]) }}"
-                                                        class="btn btn-sm btn-primary">Download Draft</a>
+                                                        class="btn btn-sm btn-success">Download Draft</a>
                                                 @endif
                                             </div>
                                         </div>
@@ -223,12 +225,13 @@
                                                                     <td>{{ $item->tanggal_mulai_berlaku }} S/D
                                                                         {{ $item->tanggal_selesai_berlaku }}</td>
                                                                     <td>
-                                                                        <button class="btn btn-sm mb-1 btn-primary"
-                                                                            wire:click="$dispatch('detail-sk-refresh', { id: {{ $item->id }} })">Detail</button>
+                                                                        <a href="{{ route('preview-kp', $item->id) }}"
+                                                                            class="btn btn-sm mb-1 btn-info">Preview</a>
                                                                         <button class="btn btn-sm mb-1 btn-warning"
                                                                             wire:click='editSkPengawaan({{ $item->id }})'>Edit
                                                                         </button>
-                                                                        <button class="btn btn-sm mb-1 btn-danger">Hapus
+                                                                        <button class="btn btn-sm mb-1 btn-danger"
+                                                                            wire:click="deleteKp({{ $item->id }})">Hapus
                                                                         </button>
                                                                     </td>
                                                                 </tr>

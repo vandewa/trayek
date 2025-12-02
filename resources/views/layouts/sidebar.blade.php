@@ -14,6 +14,7 @@
                 <div class="menu-title">Kendaraan</div>
             </a>
         </li>
+        @if(auth()->user()->hasRole(['superadmin', 'admin']))
         <li>
             <a href="{{ route('master.perusahaan') }}">
                 <div class="parent-icon"><span class="material-symbols-outlined">
@@ -57,6 +58,7 @@
 
             </ul>
         </li>
+        @endif
         <!-- Add more menu items as needed -->
     </ul>
 </div>
